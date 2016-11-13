@@ -33,10 +33,11 @@
       <h2>Contatos</h2>
     </div>
 
-    <aside class="float-right">
-      <a class="button button-outline" href="/">Home</a>
-      <a class="button button-black" href="/contatos">Contatos</a>
-    </aside>
+    <div
+      ng-include
+      onload="active = contacts"
+      src="'templates/nav.tmpl.html'">
+    </div>
   </header>
 
   <main class="container">
@@ -61,8 +62,7 @@
     </table>
   </main>
 
-  <footer class="container">
-  </footer>
+  <div ng-include src="'templates/footer.tmpl.html'"></div>
 
   <!-- JS -->
   <script src="libs/angular/angular.js"></script>

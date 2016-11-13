@@ -6,6 +6,7 @@
 
     vm = this;
     vm.form = {};
+    vm.active = 'home';
 
     // ====
 

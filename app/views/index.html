@@ -33,10 +33,11 @@
       <h2>Home</h2>
     </div>
 
-    <aside class="float-right">
-      <a class="button button-black" href="/">Home</a>
-      <a class="button button-outline" href="/contatos">Contatos</a>
-    </aside>
+    <div
+      ng-include
+      onload="active = home"
+      src="'templates/nav.tmpl.html'">
+    </div>
   </header>
 
   <main class="container">
@@ -84,8 +85,7 @@
     </form>
   </main>
 
-  <footer class="container">
-  </footer>
+  <div ng-include src="'templates/footer.tmpl.html'"></div>
 
   <!-- JS -->
   <script src="libs/angular/angular.js"></script>

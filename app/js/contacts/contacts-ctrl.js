@@ -5,6 +5,7 @@
     var vm;
 
     vm = this;
+    vm.active = 'contacts';
 
     // ====
 

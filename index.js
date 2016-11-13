@@ -9,6 +9,7 @@ app.set('port', process.env.PORT || 8899);
 
 app.use('/css', express.static(path.join(__dirname, '/app/css/')));
 app.use('/js', express.static(path.join(__dirname, '/app/js/')));
+app.use('/templates', express.static(path.join(__dirname, '/app/views/templates/')));
 app.use('/libs/angular', express.static(path.join(__dirname, '/app/vendor/angular/')));
 app.use('/libs/milligram', express.static(path.join(__dirname, '/app/vendor/milligram/dist/')));
 
