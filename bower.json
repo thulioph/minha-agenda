@@ -1,0 +1,25 @@
+{
+  "name": "minha-agenda",
+  "authors": [
+    "thulioph <thulioph@gmail.com>"
+  ],
+  "description": "Agenda de contatos com: nome, telefone e e-mail.",
+  "main": "",
+  "keywords": [
+    "thulioph",
+    "agenda"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "milligram": "^1.2.0",
+    "angular": "1.5.8"
+  }
+}

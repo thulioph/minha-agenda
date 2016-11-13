@@ -1,0 +1,24 @@
+{
+  "name": "minha-agenda",
+  "version": "1.0.0",
+  "description": "Agenda de contatos com: nome, telefone e e-mail.",
+  "main": "index.js",
+  "engines": {
+    "node": "6.3.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "node index.js"
+  },
+  "keywords": [
+    "thulioph",
+    "cbtu",
+    "academia",
+    "jedi"
+  ],
+  "author": "Thulio Philipe",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
