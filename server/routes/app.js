@@ -1,8 +1,8 @@
 var http, db, Contact;
 
 http = require('http');
-db = require('config/db');
-Contact = require('controllers/contacts');
+db = require('./config/db.js');
+Contact = require('./controllers/contacts.js');
 
 
 // Criando o servidor http

@@ -3,7 +3,7 @@ var mongoose, Contact, msg, obj;
 mongoose = require('mongoose');
 Contact = mongoose.model('Contact');
 
-function create(req, res) {
+function add(req, res) {
   var data, model;
 
   data = {
@@ -28,7 +28,7 @@ function create(req, res) {
   });
 }
 
-function retrieve(req, res) {
+function list(req, res) {
   var query;
 
   query = {};
@@ -66,7 +66,7 @@ function edit(req, res) {
   });
 }
 
-function delete(req, res) {
+function remove(req, res) {
   var query;
 
   query = {};
@@ -85,10 +85,10 @@ function delete(req, res) {
 }
 
 obj = {
-  create: create,
-  retrieve: retrieve,
+  create: add,
+  retrieve: list,
   edit: edit,
-  delete: delete
+  delete: remove
 };
 
 module.exports = obj;

@@ -39,4 +39,4 @@ process.on('SIGINT', function() {
   });
 });
 
-require('./models/index');
+require('../models/contact.js');
