@@ -36,10 +36,10 @@ function list(req, res) {
   Contact.find(query, function(err, data) {
     if (err) {
       console.log('Ocorreu um erro:', err);
-      msg = 'Error: ' + err;
+      msg = JSON.stringify(err);
     } else {
       console.log('Listagem:', data);
-      msg = 'Contatos listados: ' + JSON.stringify(data);
+      msg = JSON.stringify(data);
     }
 
     res.end(msg);
