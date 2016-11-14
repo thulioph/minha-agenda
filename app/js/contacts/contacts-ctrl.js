@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  function ContactsCtrl() {
+  function ContactsCtrl(CoreService) {
     var vm;
 
     vm = this;
@@ -10,13 +10,19 @@
     // ====
 
     function getContacts() {
-      console.warn('DALE DALE!');
+      CoreService.listContacts().then(function(data) {
+        vm.contacts = data;
+      });
     }
 
     // ====
 
-    vm.getContacts = getContacts;
+    vm.getContacts = getContacts();
   }
+
+  ContactsCtrl.$inject = [
+    'CoreService'
+  ];
 
   angular
   .module('Contacts.ctrl', [])
