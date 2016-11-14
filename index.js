@@ -31,6 +31,10 @@ app.get('/contatos', function(req, res) {
 // Startando o server
 // ==========
 
-server.listen(app.get('port'), function() {
-  console.log('Servidor rodando na porta: ', app.get('port'));
+var port;
+
+port = app.get('port');
+
+server.listen(port, function() {
+  console.log('Frontend rodando em http://localhost:' + port);
 });
