@@ -3,41 +3,62 @@
 Aplicação que permite a adição de contatos a uma lista qualquer. 
 Forneça: **nome**, **telefone**, **e-mail** e uma **nota** para cadastrar um contato.
 
+
 ## Requisitos
 
 - [Git][git]
 - [NodeJS][nodejs]
 - [Bower][bower]
 - [MongoDB][mongodb]
-- [Heroku CLI][heroku]
 
-## Pacotes
+## Utilitários
 
 - [Express][express]
 - [AngularJS][angularjs]
 - [Milligram][milligram]
 - [Mongoose][mongoose]
 
-## Melhorias
+## Setup
 
-- O fluxo correto para desenvolvimento da aplicação é:
-  - Angular consome os dados que vem do NODEJS
-  - O NODEJS consome os dados que vem do MONGODB
-  - Angular -> NodeJS -> MongoDB
-  - MongoDB -> NodeJS -> Angular
+1. Realize o **download das dependências** do projeto com os comandos:
 
+```sh
+$ bower install --save
+```
 
+> dependências do bower.json
 
----
+```sh
+$ npm install
+```
 
-#### comandos 
+> dependências do package.json
 
-- `bower init` / bower@1.7.9
-- `npm init` / node@6.3.0
-- `brew install mongodb` / mongo@3.2.10
-- `mongod --dbpath /minha/pasta`
-- `mongo` (inicia o shell do MongoDB)
+2. Inicie o **MongoDB** com o comando:
+
+```sh
+$ mongod --dbpath ~/path/
+```
+
+> **--dbpath** é um comando alternativo, e **path** será a pasta onde os dados do mongo serão salvos.
+
+3. Inicie o servidor para os arquivos da pasta **server** com o comando:
+
+```sh
+$ npm run server
+```
+
+4. Inicie o servidor para os arquivos do **Frontend** com o comando:
+
+```sh
+$ npm run app
+```
+
+## Comandos úteis
+
+- `brew install mongodb` (instale o mongodb via brew)
 - `npm install -g mongo-hacker` (melhora a visualização do terminal ao utilizar mongodb)
+- `mongo` (inicia o shell do MongoDB)
 
 
 [git]: http://git-scm.com/downloads/  "Git"
