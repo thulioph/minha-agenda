@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
+  <base href="../" target="_blank">
+
   <title>Minha Agenda</title>
 
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -24,7 +26,7 @@
   <meta name="twitter:image:src" content="https://angrytaxis.com/fb-share.png">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="libs/milligram/milligram.css">
+  <link rel="stylesheet" href="vendor/milligram/dist/milligram.min.css">
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body ng-controller="HomeCtrl as vm">
@@ -36,7 +38,7 @@
     <div
       ng-include
       onload="active = home"
-      src="'templates/nav.tmpl.html'">
+      src="'views/templates/nav.tmpl.html'">
     </div>
   </header>
 
@@ -85,10 +87,10 @@
     </form>
   </main>
 
-  <div ng-include src="'templates/footer.tmpl.html'"></div>
+  <div ng-include src="'views/templates/footer.tmpl.html'"></div>
 
   <!-- Libs -->
-  <script src="libs/angular/angular.js"></script>
+  <script src="vendor/angular/angular.min.js"></script>
 
   <!-- App -->
   <script src="js/app.js"></script>
