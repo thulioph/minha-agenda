@@ -12,6 +12,9 @@
         templateUrl: 'views/contatos.html',
         controller: 'ContactsCtrl',
         controllerAs: 'vm'
+      })
+      .otherwise({
+        redirectTo: '/'
       });
   }
 

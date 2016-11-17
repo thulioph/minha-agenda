@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  function CoreService($log, $http, $q, ApiConfig) {
+  function CoreService($log, $http, $q, ApiConfig, $route) {
     function _listContacts() {
 
       function success(response) {
@@ -15,8 +15,13 @@
       return $http.get(ApiConfig.API_URL + '/contacts/retrieve').then(success).catch(error);
     }
 
+    function _getRoute() {
+      return $route.current.originalPath;
+    }
+
     return {
-      listContacts: _listContacts
+      listContacts: _listContacts,
+      getRoute: _getRoute
     }
   }
 
@@ -24,7 +29,8 @@
     '$log',
     '$http',
     '$q',
-    'ApiConfig'
+    'ApiConfig',
+    '$route'
   ];
 
   angular

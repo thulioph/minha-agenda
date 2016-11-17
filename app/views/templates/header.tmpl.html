@@ -4,8 +4,15 @@
   </div>
 
   <nav class="float-right">
-    <a class="button button-black" href="#/">Home</a>
-    <a class="button button-outline" href="#/contatos">Contatos</a>
+    <a
+      ng-class="{ 'button-black' : route === '/' }"
+      class="button"
+      href="#/">Home</a>
+
+    <a
+      ng-class="{ 'button-black' : route === '/contatos' }"
+      class="button"
+      href="#/contatos">Contatos</a>
   </nav>
 </header>
 
