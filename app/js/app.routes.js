@@ -13,6 +13,11 @@
         controller: 'ContactsCtrl',
         controllerAs: 'vm'
       })
+      .when('/contato/:id', {
+        templateUrl: 'views/contato.html',
+        controller: 'ContactCtrl',
+        controllerAs: 'vm'
+      })
       .otherwise({
         redirectTo: '/'
       });
