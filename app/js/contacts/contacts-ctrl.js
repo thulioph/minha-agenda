@@ -1,11 +1,10 @@
 (function() {
   'use strict';
 
-  function ContactsCtrl(CoreService) {
+  function ContactsCtrl(CoreService, $rootScope) {
     var vm;
 
     vm = this;
-    vm.active = 'contacts';
 
     // ====
 
@@ -18,10 +17,12 @@
     // ====
 
     vm.getContacts = getContacts();
+    $rootScope.route = CoreService.getRoute();
   }
 
   ContactsCtrl.$inject = [
-    'CoreService'
+    'CoreService',
+    '$rootScope'
   ];
 
   angular

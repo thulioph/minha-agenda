@@ -6,7 +6,9 @@
     [
       'Core',
       'Home',
-      'Contacts'
+      'Contacts',
+      'Contact',
+      'ngRoute'
     ]
   );
 })();

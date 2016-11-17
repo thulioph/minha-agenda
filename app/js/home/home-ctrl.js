@@ -1,12 +1,11 @@
 (function() {
   'use strict';
 
-  function HomeCtrl() {
+  function HomeCtrl(CoreService, $rootScope) {
     var vm;
 
     vm = this;
     vm.form = {};
-    vm.active = 'home';
 
     // ====
 
@@ -19,7 +18,13 @@
     // ====
 
     vm.addContact = addContact;
+    $rootScope.route = CoreService.getRoute();
   }
+
+  HomeCtrl.$inject = [
+    'CoreService',
+    '$rootScope'
+  ];
 
   angular
   .module('Home.ctrl', [])
