@@ -4,8 +4,6 @@
   <meta charset="UTF-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <base href="../" target="_blank">
-
   <title>Minha Agenda</title>
 
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -29,72 +27,32 @@
   <link rel="stylesheet" href="vendor/milligram/dist/milligram.min.css">
   <link rel="stylesheet" href="css/main.css">
 </head>
-<body ng-controller="HomeCtrl as vm">
-  <header class="container clearfix">
-    <div class="float-left">
-      <h2>Home</h2>
-    </div>
+<body>
 
-    <div
-      ng-include
-      onload="active = home"
-      src="'views/templates/nav.tmpl.html'">
-    </div>
-  </header>
+  <!-- Header -->
+  <div
+    class="container"
+    ng-include
+    src="'views/templates/header.tmpl.html'">
+  </div>
 
-  <main class="container">
-    <form name="contactForm" ng-submit="vm.addContact()">
-      <fieldset>
-        <label for="name">Nome</label>
-        <input
-          type="text"
-          id="name"
-          placeholder="Nome do contato"
-          required
-          ng-model="vm.form.name">
-      </fieldset>
+  <main ng-view="" autoscroll="true"></main>
 
-      <fieldset>
-        <label for="phone">Telefone</label>
-        <input
-          type="tel"
-          id="phone"
-          placeholder="Telefone do contato"
-          required
-          ng-model="vm.form.phone">
-      </fieldset>
-
-      <fieldset>
-        <label for="email">E-mail</label>
-        <input
-          type="email"
-          id="email"
-          placeholder="E-mail do contato"
-          required
-          ng-model="vm.form.email">
-      </fieldset>
-
-      <fieldset>
-        <label for="note">Nota</label>
-        <textarea
-          id="note"
-          placeholder="Escreva alguma nota sobre o contato"
-          ng-model="vm.form.note">
-        </textarea>
-      </fieldset>
-
-      <button type="submit" class="button">cadastrar</button>
-    </form>
-  </main>
-
-  <div ng-include src="'views/templates/footer.tmpl.html'"></div>
+  <!-- Footer -->
+  <div
+    class="container"
+    ng-include
+    src="'views/templates/footer.tmpl.html'">
+  </div>
 
   <!-- Libs -->
   <script src="vendor/angular/angular.min.js"></script>
+  <script src="vendor/angular-route/angular-route.min.js"></script>
 
   <!-- App -->
   <script src="js/app.js"></script>
   <script src="js/app.config.js"></script>
+  <script src="js/app.routes.js"></script>
 
   <!-- Core -->
   <script src="js/core/core-module.js"></script>

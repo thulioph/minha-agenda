@@ -1,0 +1,44 @@
+<section class="container">
+  <form name="contactForm" ng-submit="vm.addContact()">
+    <fieldset>
+      <label for="name">Nome</label>
+      <input
+        type="text"
+        id="name"
+        placeholder="Nome do contato"
+        required
+        ng-model="vm.form.name">
+    </fieldset>
+
+    <fieldset>
+      <label for="phone">Telefone</label>
+      <input
+        type="tel"
+        id="phone"
+        placeholder="Telefone do contato"
+        required
+        ng-model="vm.form.phone">
+    </fieldset>
+
+    <fieldset>
+      <label for="email">E-mail</label>
+      <input
+        type="email"
+        id="email"
+        placeholder="E-mail do contato"
+        required
+        ng-model="vm.form.email">
+    </fieldset>
+
+    <fieldset>
+      <label for="note">Nota</label>
+      <textarea
+        id="note"
+        placeholder="Escreva alguma nota sobre o contato"
+        ng-model="vm.form.note">
+      </textarea>
+    </fieldset>
+
+    <button type="submit" class="button">cadastrar</button>
+  </form>
+</section>

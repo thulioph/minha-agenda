@@ -13,6 +13,7 @@ Forneça: **nome**, **telefone**, **e-mail** e uma **nota** para cadastrar um co
 
 ## Utilitários
 
+- [http-server][http-server]
 - [Express][express]
 - [AngularJS][angularjs]
 - [Milligram][milligram]
@@ -70,3 +71,4 @@ $ npm run app
 [express]: http://expressjs.com/  "Express"
 [angularjs]: https://angularjs.org/  "AngularJS"
 [mongoose]: http://mongoosejs.com/  "Mongoose"
+[http-server]: https://github.com/indexzero/http-server/  "HTTP Server"
