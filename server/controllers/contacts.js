@@ -22,7 +22,7 @@ function add(req, res) {
   });
 }
 
-function list(req, res) {
+function listAll() {
   var query;
 
   query = {};
@@ -74,7 +74,7 @@ function remove(req, res) {
 
 obj = {
   create: add,
-  list: list,
+  list: listAll,
   edit: edit,
   delete: remove
 };

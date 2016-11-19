@@ -5,10 +5,12 @@
     function _listContacts() {
 
       function success(response) {
+        console.warn(response);
         return response.data;
       }
 
       function error(err) {
+        console.error(err);
         return $q.reject(error.status);
       }
 
