@@ -10,7 +10,13 @@
     // ====
 
     function addContact() {
-      console.warn(vm.form);
+      var params;
+
+      params = vm.form;
+
+      CoreService.addContact(params).then(function(result) {
+        console.info('RESULT -> ', result);
+      });
 
       vm.form = {};
     }

@@ -1,27 +1,32 @@
-var mongoose, Contact, msg, obj;
+var mongoose, Contact, msg, obj, db;
 
 mongoose = require('mongoose');
+db = require('../config/db.js');
 Contact = mongoose.model('Contact');
 
 function add(req, res) {
+  console.log(req.body);
+
   var data, model;
 
-  data = {
-    email: "maconha@gmail.com",
-    name: "Maria Joana",
-    note: "Dá uma lombra massa..",
-    phone: "+5581988755593"
-  };
+  // data = {
+  //   email: "maconha@gmail.com",
+  //   name: "Maria Joana",
+  //   note: "Dá uma lombra massa..",
+  //   phone: "+5581988755593"
+  // };
 
-  model = new Contact(data);
+  model = new Contact(req.body);
 
   model.save(function(err, data) {
     if (err) {
       console.log('Ocorreu um erro:', err);
-      msg = 'Error: ' + err;
+      // msg = 'Error: ' + err;
+      return err;
     } else {
       console.log('Novo contato inserido:', data);
-      msg = 'Contato inserido: ' + JSON.stringify(data);
+      // msg = 'Contato inserido: ' + JSON.stringify(data);
+      return data;
     }
 
     res.end(msg);
@@ -86,7 +91,7 @@ function remove(req, res) {
 
 obj = {
   create: add,
-  retrieve: list,
+  list: list,
   edit: edit,
   delete: remove
 };
