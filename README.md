@@ -1,6 +1,6 @@
 ## Minha Agenda
 
-[![Code Climate](https://codeclimate.com/github/thulioph/minha-agenda/badges/gpa.svg)](codeclimate)
+[![Code Climate](https://codeclimate.com/github/thulioph/minha-agenda/badges/gpa.svg)](https://codeclimate.com/github/thulioph/minha-agenda)
 
 Aplicação que permite a adição de contatos a uma lista qualquer. 
 Forneça: **nome**, **telefone**, **e-mail** e uma **nota** para cadastrar um contato.
@@ -74,4 +74,3 @@ $ npm run app
 [angularjs]: https://angularjs.org/  "AngularJS"
 [mongoose]: http://mongoosejs.com/  "Mongoose"
 [http-server]: https://github.com/indexzero/http-server/  "HTTP Server"
-[codeclimate]: https://codeclimate.com/github/thulioph/minha-agenda "Code Climate"
