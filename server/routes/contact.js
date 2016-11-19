@@ -1,65 +1,43 @@
-var express, router, mongoose, Contact;
+var express, mongoose, Contacts, router;
 
 express = require('express');
 mongoose = require('mongoose');
-Contact = require('../controllers/contacts.js');
+Contacts = require('../controllers/contacts.js');
 
 router = express.Router();
 
-// Get contacts
-// router.get('/', function(req, res, next) {
-//   res.json(Contact.create(req));
-// });
+router.get('/', function(req, res, next) {
+  res.json(list());
+});
 
 router.post('/create', function(req, res, next) {
   res.json(create(req));
+});
+
+router.put('/edit/:id', function(req, res, next) {
+  res.json(edit(req));
+});
+
+router.delete('/delete', function(req, res, next) {
+  res.json(remove(req));
 });
 
 module.exports = router;
 
 // ==========
 
-function create(req) {
-  Contact.create(req);
+function list() {
+  Contacts.list();
 }
 
-// var http, db, Contact;
+function create(req) {
+  Contacts.create(req);
+}
 
-// http = require('http');
-// db = require('./config/db.js');
-// Contact = require('./controllers/contacts.js');
+function edit(req) {
+  Contacts.edit(req);
+}
 
-
-// // Criando o servidor http
-// // ==========
-
-// http.createServer(function(req, res) {
-//   res.writeHead(200, {
-//     'Content-Type': 'text/html;charset=utf-8',
-//     'Access-Control-Allow-Origin': '*'
-//   });
-
-//   switch(req.url) {
-//     case '/contacts/create':
-      // Contact.create(req, res);
-//     break;
-
-//     case '/contacts/retrieve':
-//       Contact.retrieve(req, res);
-//     break;
-
-//     case '/contacts/edit':
-//       Contact.edit(req, res);
-//     break;
-
-//     case '/contacts/delete':
-//       Contact.delete(req, res);
-//     break;
-
-//     default: res.end('Rota não encontrada.');
-//   }
-
-// }).listen(3000);
-
-// console.log('Server rodando em -> http://localhost:3000/');
-
+function remove(req) {
+  Contacts.delete(req);
+}

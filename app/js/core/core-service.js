@@ -12,7 +12,7 @@
         return $q.reject(error.status);
       }
 
-      return $http.get(ApiConfig.API_URL + '/contacts/retrieve').then(success).catch(error);
+      return $http.get(ApiConfig.API_URL + '/contact').then(success).catch(error);
     }
 
     // ==========
