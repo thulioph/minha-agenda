@@ -1,39 +1,48 @@
-var http, db, Contact;
+var express, app, logger, cookieParser, bodyParser, cors,
+contact;
 
-http = require('http');
-db = require('./config/db.js');
-Contact = require('./controllers/contacts.js');
+express = require('express');
+logger = require('morgan');
+cookieParser = require('cookie-parser');
+bodyParser = require('body-parser');
+cors = require('cors');
 
-
-// Criando o servidor http
 // ==========
 
-http.createServer(function(req, res) {
-  res.writeHead(200, {
-    'Content-Type': 'text/html;charset=utf-8',
-    'Access-Control-Allow-Origin': '*'
-  });
+app = express();
 
-  switch(req.url) {
-    case '/contacts/create':
-      Contact.create(req, res);
-    break;
+app.use(cors());
+app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
 
-    case '/contacts/retrieve':
-      Contact.retrieve(req, res);
-    break;
+// ==========
 
-    case '/contacts/edit':
-      Contact.edit(req, res);
-    break;
+contact = require('../server/routes/contact.js');
 
-    case '/contacts/delete':
-      Contact.delete(req, res);
-    break;
+app.use('/contact', contact);
 
-    default: res.end('Rota não encontrada.');
-  }
+// 404
+app.use(function(req, res, next) {
+  var err;
 
-}).listen(3000);
+  err = new Error('Not Found');
+  err.status = 404;
 
-console.log('Server rodando em -> http://localhost:3000/');
+  next(err);
+});
+
+// error handler
+app.use(function(err, req, res, next) {
+
+  // set locals, only providing error in development
+  res.locals.message = err.message;
+  res.locals.error = req.app.get('env') === 'development' ? err : {};
+
+  // render the error page
+  res.status(err.status || 500);
+  res.render('error');
+});
+
+module.exports = app;

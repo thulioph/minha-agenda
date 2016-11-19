@@ -1,14 +1,11 @@
-var mongoose;
+var mongoose, db;
 
 mongoose = require('mongoose');
-
 
 // conectando com o mongodb
 // ==========
 
 mongoose.connect('mongodb://localhost/cbtu');
-
-var db;
 
 db = mongoose.connection;
 
@@ -29,7 +26,8 @@ db.on('disconnected', function() {
 });
 
 
-// Encerra a conexão com o mongoose, caso o processo do Node pare.
+// Encerra a conexão com o mongoose
+// caso o processo do Node pare.
 // ==========
 
 process.on('SIGINT', function() {
