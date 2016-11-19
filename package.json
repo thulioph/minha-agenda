@@ -1,6 +1,6 @@
 {
   "name": "minha-agenda",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Agenda de contatos com: nome, telefone e e-mail.",
   "main": "index.js",
   "engines": {
@@ -11,11 +11,15 @@
     "app": "http-server -a localhost -p 8899",
     "server": "node server/server.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thulioph/minha-agenda.git"
+  },
   "keywords": [
     "thulioph",
-    "cbtu",
-    "academia",
-    "jedi"
+    "agenda",
+    "contatos",
+    "telefone"
   ],
   "author": "Thulio Philipe",
   "license": "MIT",
