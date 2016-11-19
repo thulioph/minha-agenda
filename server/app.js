@@ -1,15 +1,17 @@
-var express, app, logger, cookieParser, bodyParser,
+var express, app, logger, cookieParser, bodyParser, cors,
 contact;
 
 express = require('express');
 logger = require('morgan');
 cookieParser = require('cookie-parser');
 bodyParser = require('body-parser');
+cors = require('cors');
 
 // ==========
 
 app = express();
 
+app.use(cors());
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
