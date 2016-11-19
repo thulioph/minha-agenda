@@ -5,9 +5,15 @@
   ],
   "description": "Agenda de contatos com: nome, telefone e e-mail.",
   "main": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thulioph/minha-agenda.git"
+  },
   "keywords": [
     "thulioph",
-    "agenda"
+    "agenda",
+    "contatos",
+    "telefone"
   ],
   "license": "MIT",
   "homepage": "",
