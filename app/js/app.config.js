@@ -5,7 +5,7 @@
 
   ApiConfig = {
     'API_LOCALHOST': 'http://localhost:3000',
-    'API_URL': 'https://minhaagenda-api.herokuapp.com/'
+    'API_URL': 'https://minhaagenda-api.herokuapp.com'
   };
 
   angular
