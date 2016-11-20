@@ -41,4 +41,12 @@
 
     <button type="submit" class="button button-outline">cadastrar</button>
   </form>
+
+  <div ng-if="vm.last_created">
+    <blockquote>
+      <p><em>
+        <a ng-href="#/contato/{{vm.last_created._id}}" title="Clique para visualiza-lo">{{vm.last_created.name}}</a>, foi o último contato adicionado!
+      </em></p>
+    </blockquote>
+  </div>
 </section>
