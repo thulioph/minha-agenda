@@ -7,37 +7,45 @@ Contacts = require('../controllers/contacts.js');
 router = express.Router();
 
 router.get('/', function(req, res, next) {
-  res.json(list());
+  list(res);
+});
+
+router.get('/:id', function(req, res, next) {
+  getById(req, res);
 });
 
 router.post('/create', function(req, res, next) {
-  res.json(create(req));
+  create(req, res);
 });
 
 router.put('/edit/:id', function(req, res, next) {
-  res.json(edit(req));
+  edit(req, res);
 });
 
-router.delete('/delete', function(req, res, next) {
-  res.json(remove(req));
+router.delete('/delete/:id', function(req, res, next) {
+  remove(req, res);
 });
 
 module.exports = router;
 
 // ==========
 
-function list() {
-  Contacts.list();
+function list(res) {
+  Contacts.list(res);
 }
 
-function create(req) {
-  Contacts.create(req);
+function getById(req, res) {
+  Contacts.get(req, res);
 }
 
-function edit(req) {
-  Contacts.edit(req);
+function create(req, res) {
+  Contacts.create(req, res);
 }
 
-function remove(req) {
-  Contacts.delete(req);
+function edit(req, res) {
+  Contacts.edit(req, res);
+}
+
+function remove(req, res) {
+  Contacts.delete(req, res);
 }

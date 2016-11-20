@@ -1,3 +1,50 @@
 <section class="container">
-  {{vm.user}}
+  <form name="contactForm" ng-submit="vm.editContact()">
+    <fieldset>
+      <label for="name">Nome</label>
+      <input
+        type="text"
+        id="name"
+        placeholder="Nome do contato"
+        required
+        ng-model="vm.user.name">
+    </fieldset>
+
+    <fieldset>
+      <label for="phone">Telefone</label>
+      <input
+        type="tel"
+        id="phone"
+        placeholder="Telefone do contato"
+        required
+        ng-model="vm.user.phone">
+    </fieldset>
+
+    <fieldset>
+      <label for="email">E-mail</label>
+      <input
+        type="email"
+        id="email"
+        placeholder="E-mail do contato"
+        required
+        ng-model="vm.user.email">
+    </fieldset>
+
+    <fieldset>
+      <label for="note">Nota</label>
+      <textarea
+        id="note"
+        placeholder="Escreva alguma nota sobre o contato"
+        ng-model="vm.user.note">
+      </textarea>
+    </fieldset>
+
+    <button type="submit" class="button button-outline">
+      editar contato
+    </button>
+
+    <button ng-click="vm.removeContact()" class="button button-black">
+      remover contato
+    </button>
+  </form>
 </section>
