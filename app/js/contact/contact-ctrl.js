@@ -1,24 +1,54 @@
 (function() {
   'use strict';
 
-  function ContactCtrl($routeParams) {
+  function ContactCtrl($routeParams, $location, CoreService) {
     var vm;
 
     vm = this;
 
     // ====
 
-    function getUser() {
-      vm.user = $routeParams;
+    function getContact() {
+      var id;
+
+      id = $routeParams.id;
+
+      CoreService.getContact(id).then(function(result) {
+        vm.user = result;
+      });
+    }
+
+    function editContact() {
+      var params;
+
+      params = vm.user;
+
+      CoreService.editContact(params).then(function(result) {
+        $location.path('/contatos');
+      });
+    }
+
+    function removeContact() {
+      var params;
+
+      params = vm.user._id;
+
+      CoreService.removeContact(params).then(function(result) {
+        $location.path('/contatos');
+      });
     }
 
     // ====
 
-    vm.getUser = getUser();
+    vm.getContact = getContact();
+    vm.editContact = editContact;
+    vm.removeContact = removeContact;
   }
 
   ContactCtrl.$inject = [
-    '$routeParams'
+    '$routeParams',
+    '$location',
+    'CoreService'
   ];
 
   angular

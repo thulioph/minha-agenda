@@ -15,7 +15,7 @@
       params = vm.form;
 
       CoreService.addContact(params).then(function(result) {
-        console.info('RESULT -> ', result);
+        vm.last_created = result;
       });
 
       vm.form = {};
