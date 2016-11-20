@@ -1,10 +1,12 @@
 ## Minha Agenda
 
-[![Code Climate](https://codeclimate.com/github/thulioph/minha-agenda/badges/gpa.svg)](https://codeclimate.com/github/thulioph/minha-agenda)
+[![Code Climate](https://codeclimate.com/github/thulioph/minha-agenda/badges/gpa.svg)](https://codeclimate.com/github/thulioph/minha-agenda) [![Just for fun.](https://img.shields.io/badge/just%20for-fun-47B500.svg)](https://github.com/thulioph/minha-agenda)
 
-Aplicação que permite a adição de contatos a uma lista qualquer. 
-Forneça: **nome**, **telefone**, **e-mail** e uma **nota** para cadastrar um contato.
+> Forneça: **nome**, **telefone**, **e-mail** e uma **nota** para cadastrar um contato.
 
+## Objetivo
+
+Esta aplicação tem o objetivo de testar as habilidades e conhecimentos de desenvolvimento de um sistema utilizando a **MEAN** stack, que vai desde a sua concepção até a publicação. Está sendo utilizado **Github pages** para publicação dos arquivos de **Frontend**, para publicação dos arquivos de backend o **Heroku**, e para o banco de dados está sendo utilizado o **mLab**.
 
 ## Requisitos
 
@@ -15,11 +17,17 @@ Forneça: **nome**, **telefone**, **e-mail** e uma **nota** para cadastrar um co
 
 ## Utilitários
 
+#### desenvolvimento
 - [http-server][http-server]
 - [Express][express]
 - [AngularJS][angularjs]
 - [Milligram][milligram]
 - [Mongoose][mongoose]
+
+#### publicação
+- [Github Pages][github-pages]
+- [Heroku][heroku]
+- [mLab][mLab]
 
 ## Setup
 
@@ -57,12 +65,17 @@ $ npm run server
 $ npm run app
 ```
 
+> altere o valor de `API_URL` para `http://localhost:3000`, onde o mongo irá rodar localmente.
+
 ## Comandos úteis
 
 - `brew install mongodb` (instale o mongodb via brew)
 - `npm install -g mongo-hacker` (melhora a visualização do terminal ao utilizar mongodb)
 - `mongo` (inicia o shell do MongoDB)
 
+## Licença
+
+[MIT License][mit-license] © Thulio Philipe
 
 [git]: http://git-scm.com/downloads/  "Git"
 [nodejs]: https://nodejs.org/en/  "Nodejs"
@@ -74,3 +87,7 @@ $ npm run app
 [angularjs]: https://angularjs.org/  "AngularJS"
 [mongoose]: http://mongoosejs.com/  "Mongoose"
 [http-server]: https://github.com/indexzero/http-server/  "HTTP Server"
+[github-pages]: https://pages.github.com/ "Github Pages"
+[heroku]: https://www.heroku.com/ "Heroku"
+[mLab]: https://mlab.com/ "mLab"
+[mit-license]: http://thulioph.mit-license.org/ "Licença de uso"
