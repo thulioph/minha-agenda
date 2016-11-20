@@ -6,7 +6,7 @@
 
 ## Objetivo
 
-Esta aplicação tem o objetivo de testar as habilidades e conhecimentos de desenvolvimento de um sistema utilizando a **MEAN** stack, que vai desde a sua concepção até a publicação. Está sendo utilizado **Github pages** para publicação dos arquivos de **Frontend**, para publicação dos arquivos de backend o **Heroku**, e para o banco de dados está sendo utilizado o **mLab**.
+Esta aplicação tem o objetivo de testar as habilidades e conhecimentos de desenvolvimento de um sistema utilizando a **MEAN** stack, que vai desde a sua concepção até a publicação. Está sendo utilizado **Github pages** para publicação dos arquivos de **Frontend**, para publicação dos arquivos de ***backend** o **Heroku**, e para o **banco de dados** está sendo utilizado o **mLab**.
 
 ## Requisitos
 
