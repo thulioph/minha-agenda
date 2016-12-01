@@ -5,6 +5,7 @@
   .module('App',
     [
       'Core',
+      'Error',
       'Home',
       'Contacts',
       'Contact',

@@ -4,6 +4,7 @@
   angular.module('Core',
     [
       'Core.config',
+      'Core.constant',
       'Core.service'
     ]
   );

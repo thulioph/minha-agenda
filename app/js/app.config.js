@@ -1,14 +1,15 @@
 (function() {
-  'use strict';
+ 'use strict';
 
-  var ApiConfig;
+function AppConfig($httpProvider) {
+  $httpProvider.interceptors.push('NotFoundInterceptor');
+}
 
-  ApiConfig = {
-    'API_URL': 'https://minhaagenda-api.herokuapp.com'
-  };
+AppConfig.$inject = [
+  '$httpProvider'
+];
 
-  angular
-  .module('Core.config', [])
-  .constant('ApiConfig', ApiConfig);
-
-})();
+ angular
+ .module('Core.config', [])
+ .config(AppConfig);
+})()
