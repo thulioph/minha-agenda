@@ -18,6 +18,11 @@
         controller: 'ContactCtrl',
         controllerAs: 'vm'
       })
+      .when('/error/404', {
+        templateUrl: 'views/404.html',
+        controller: 'NotFoundCtrl',
+        controllerAs: 'vm'
+      })
       .otherwise({
         redirectTo: '/'
       });
@@ -30,5 +35,4 @@
   angular
   .module('App')
   .config(ConfigApp);
-
 })();
