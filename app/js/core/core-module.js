@@ -5,7 +5,8 @@
     [
       'Core.config',
       'Core.constant',
-      'Core.service'
+      'Core.service',
+      'Core.fbLogin'
     ]
   );
 
