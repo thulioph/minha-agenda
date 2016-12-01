@@ -8,7 +8,7 @@
   };
 
   angular
-  .module('Core.config', [])
+  .module('Core.constant', [])
   .constant('ApiConfig', ApiConfig);
 
 })();
