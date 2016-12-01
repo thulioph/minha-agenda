@@ -22,13 +22,11 @@
 
     function _statusChangeCallback(response) {
       if (response.status === 'connected') {
-        console.warn('CONECTADO!');
-        _getUserData();
+        _getUserData(); // obtém os dados caso o usuário já tenha permitido
       } else if (response.status === 'not_authorized') {
-        console.warn('NÃO AUTORIZADO!');
-        _handleLogin();
+        _handleLogin(); // vai abrir a janela do facebook pra login
       } else {
-        console.warn('NÃO ESTÁ LOGADO!');
+        console.error('NÃO ESTÁ LOGADO!');
       }
     }
 
@@ -39,7 +37,12 @@
     }
 
     function _getUserData() {
-      FB.api('/me', function(response) {
+      // fields são os campos que eu desejo pegar do usuário
+      var fields;
+
+      fields = 'picture, link, gender, locale, email, cover, timezone, updated_time';
+
+      FB.api('/me', { fields: fields }, function(response) {
         console.log('A informação do usuário é: ', response);
       });
     }
@@ -54,7 +57,8 @@
         } else {
           console.error('NÃO ESTÁ LOGADO!');
         }
-      }, { scope: 'public_profile,email' });
+      }, { scope: 'public_profile, email' });
+      // scope: quais permissões o usuário está aceitando fornecer
     }
 
     // ======
