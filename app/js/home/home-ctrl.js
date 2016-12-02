@@ -1,21 +1,26 @@
 (function() {
   'use strict';
 
-  function HomeCtrl(CoreService, $rootScope) {
+  function HomeCtrl(CoreService, $rootScope, ngProgressFactory) {
     var vm;
 
     vm = this;
+    vm.progressbar = ngProgressFactory.createInstance();
     vm.form = {};
 
     // ====
 
     function addContact() {
+      vm.progressbar.start();
+
       var params;
 
       params = vm.form;
 
       CoreService.addContact(params).then(function(result) {
         vm.last_created = result;
+
+        vm.progressbar.complete();
       });
 
       vm.form = {};
@@ -29,7 +34,8 @@
 
   HomeCtrl.$inject = [
     'CoreService',
-    '$rootScope'
+    '$rootScope',
+    'ngProgressFactory'
   ];
 
   angular

@@ -10,7 +10,8 @@
       'Home',
       'Contacts',
       'Contact',
-      'ngRoute'
+      'ngRoute',
+      'ngProgress'
     ]
   );
 })();

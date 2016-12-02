@@ -1,10 +1,11 @@
 (function() {
   'use strict';
 
-  function LoginCtrl($rootScope, $scope, Facebook, Google) {
+  function LoginCtrl($rootScope, $scope, Facebook, Google, ngProgressFactory) {
     var vm;
 
     vm = this;
+    vm.progressbar = ngProgressFactory.createInstance();
 
     vm.login = {
       facebook: loginFacebook,
@@ -14,10 +15,14 @@
     // ====
 
     function loginFacebook() {
+      vm.progressbar.start();
+
       Facebook.login();
     }
 
     function loginGoogle() {
+      vm.progressbar.start();
+
       Google.login();
     }
 
@@ -25,12 +30,16 @@
       $scope.$apply(function () {
           vm.fb_user_info = obj.user_info;
       });
+
+      vm.progressbar.complete();
     }
 
     function oAuthUserGL(evt, obj) {
       $scope.$apply(function () {
           vm.gl_user_info = obj.user_info;
       });
+
+      vm.progressbar.complete();
     }
 
     // ====
@@ -43,7 +52,8 @@
     '$rootScope',
     '$scope',
     'Facebook',
-    'Google'
+    'Google',
+    'ngProgressFactory'
   ];
 
   angular
