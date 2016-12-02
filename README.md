@@ -67,6 +67,17 @@ $ npm run app
 
 > altere o valor de `API_URL` para `http://localhost:3000`, onde o mongo irá rodar localmente.
 
+## Autenticação
+
+Existem atualmente dois modelos de autenticação:
+
+- via Facebook
+  - inicializa o setup do SDK [link][fb-init]
+  - verifica o status de login do usuário [link][fb-state]
+  - realizo o login caso esteja deslogado [link][fb-login]
+  - obtenho as informações que preciso [link][fb-getdata]
+- via Google
+
 ## Comandos úteis
 
 - `brew install mongodb` (instale o mongodb via brew)
@@ -91,3 +102,8 @@ $ npm run app
 [heroku]: https://www.heroku.com/ "Heroku"
 [mLab]: https://mlab.com/ "mLab"
 [mit-license]: http://thulioph.mit-license.org/ "Licença de uso"
+
+[fb-init]: https://developers.facebook.com/docs/javascript/reference/FB.init/v2.8 "Setup para o SDK"
+[fb-state]: https://developers.facebook.com/docs/reference/javascript/FB.getLoginStatus "Verifica se o usuário está logado ou não"
+[fb-login]: https://developers.facebook.com/docs/reference/javascript/FB.login/v2.8 "Realizo o login do usuário através do Facebook"
+[fb-getdata]: https://developers.facebook.com/docs/javascript/reference/FB.api "Realizo o get das informações do usuário"
