@@ -75,8 +75,13 @@ Existem atualmente dois modelos de autenticação:
   - inicializa o setup do SDK [link][fb-init]
   - verifica o status de login do usuário [link][fb-state]
   - realizo o login caso esteja deslogado [link][fb-login]
-  - obtenho as informações que preciso [link][fb-getdata]
+  - obtenho as informações necessárias [link][fb-getdata]
 - via Google
+  - realize o load da lib necessária [link][gl-login]
+  - inicializa o cliente com as credenciais [link][gl-login]
+  - verifica o status de login do usuário [link][gl-login]
+  - realizo o login caso esteja deslogado [link][gl-login]
+  - obtenho as informações necessárias [link][gl-login]
 
 ## Comandos úteis
 
@@ -107,3 +112,5 @@ Existem atualmente dois modelos de autenticação:
 [fb-state]: https://developers.facebook.com/docs/reference/javascript/FB.getLoginStatus "Verifica se o usuário está logado ou não"
 [fb-login]: https://developers.facebook.com/docs/reference/javascript/FB.login/v2.8 "Realizo o login do usuário através do Facebook"
 [fb-getdata]: https://developers.facebook.com/docs/javascript/reference/FB.api "Realizo o get das informações do usuário"
+
+[gl-login]: https://developers.google.com/api-client-library/javascript/samples/samples "Como realizar autenticação utilizando o Google"
