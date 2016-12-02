@@ -23,6 +23,11 @@
         controller: 'NotFoundCtrl',
         controllerAs: 'vm'
       })
+      .when('/login', {
+        templateUrl: 'views/login.html',
+        controller: 'LoginCtrl',
+        controllerAs: 'vm'
+      })
       .otherwise({
         redirectTo: '/'
       });

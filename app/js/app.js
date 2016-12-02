@@ -6,6 +6,7 @@
     [
       'Core',
       'Error',
+      'Login',
       'Home',
       'Contacts',
       'Contact',
