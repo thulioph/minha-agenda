@@ -1,30 +1,59 @@
 <section class="container">
-  <button ng-click="vm.login.facebook()">
-    Login com Facebook
-  </button>
+  <header>
+    <button ng-click="vm.login.facebook()">
+      Login com Facebook
+    </button>
 
-  <aside ng-if="vm.user_info">
+    <button ng-click="vm.login.google()">
+      Login com Google
+    </button>
+  </header>
+
+  <aside ng-if="vm.fb_user_info">
     <strong>Nome</strong>
-    <p>{{ vm.user_info.name }}</p>
+    <p>{{ vm.fb_user_info.name }}</p>
 
     <strong>E-mail</strong>
-    <p>{{ vm.user_info.email }}</p>
+    <p>{{ vm.fb_user_info.email }}</p>
 
     <strong>Sexo</strong>
-    <p>{{ vm.user_info.gender }}</p>
+    <p>{{ vm.fb_user_info.gender }}</p>
 
     <strong>id</strong>
-    <p>{{ vm.user_info.id }}</p>
+    <p>{{ vm.fb_user_info.id }}</p>
 
     <strong>Foto do perfil</strong>
     <figure>
-      <img ng-src="{{ vm.user_info.picture.data.url }}" alt="">
+      <img ng-src="{{ vm.fb_user_info.picture.data.url }}" alt="">
     </figure>
 
     <strong>Cover image</strong>
     <figure>
-      <img ng-src="{{ vm.user_info.cover.source }}" alt="">
+      <img ng-src="{{ vm.fb_user_info.cover.source }}" alt="">
+    </figure>
+  </aside>
+
+  <aside ng-if="vm.gl_user_info">
+    <strong>Nome</strong>
+    <p>{{ vm.gl_user_info.name }}</p>
+
+    <strong>E-mail</strong>
+    <p>{{ vm.gl_user_info.email }}</p>
+
+    <strong>Sexo</strong>
+    <p>{{ vm.gl_user_info.gender }}</p>
+
+    <strong>id</strong>
+    <p>{{ vm.gl_user_info.id }}</p>
+
+    <strong>Foto do perfil</strong>
+    <figure>
+      <img ng-src="{{ vm.gl_user_info.picture.data.url }}" alt="">
     </figure>
 
+    <strong>Cover image</strong>
+    <figure>
+      <img ng-src="{{ vm.gl_user_info.cover.source }}" alt="">
+    </figure>
   </aside>
 </section>
