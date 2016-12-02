@@ -88,7 +88,7 @@
       return $rootScope.progressbar.complete();
     }
 
-    // ==========
+    // =========
 
     return {
       listContacts: _listContacts,
@@ -98,7 +98,7 @@
       editContact: _editContact,
       removeContact: _removeContact,
       progressbar: {
-        init: _progressBarInit(),
+        init: _progressBarInit(), // já inicia criando uma instância
         start: _progressBarStart,
         complete: _progressBarComplete
       }
