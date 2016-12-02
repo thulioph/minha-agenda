@@ -1,14 +1,11 @@
 (function() {
   'use strict';
 
-  function HomeCtrl(CoreService, $rootScope, Facebook) {
+  function HomeCtrl(CoreService, $rootScope) {
     var vm;
 
     vm = this;
     vm.form = {};
-    vm.login = {
-      facebook: loginFacebook
-    };
 
     // ====
 
@@ -24,10 +21,6 @@
       vm.form = {};
     }
 
-    function loginFacebook() {
-      Facebook.login();
-    }
-
     // ====
 
     vm.addContact = addContact;
@@ -36,8 +29,7 @@
 
   HomeCtrl.$inject = [
     'CoreService',
-    '$rootScope',
-    'Facebook'
+    '$rootScope'
   ];
 
   angular

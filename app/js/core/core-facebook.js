@@ -1,15 +1,13 @@
 (function() {
   'use strict';
 
-  function Facebook() {
+  function Facebook($rootScope) {
     //
     // 1. é necessário obter a permissão do usuário pra se obter
     // o nome e o id
     //
 
     function _login() {
-      console.info('Init');
-
       FB.init({
         appId: '1403969292947889',
         cookie: true,
@@ -22,9 +20,11 @@
 
     function _statusChangeCallback(response) {
       if (response.status === 'connected') {
-        _getUserData(); // obtém os dados caso o usuário já tenha permitido
+        // obtém os dados caso o usuário já tenha permitido
+        _getUserData();
       } else if (response.status === 'not_authorized') {
-        _handleLogin(); // vai abrir a janela do facebook pra login
+        // vai abrir a janela do facebook pra login
+        _handleLogin();
       } else {
         console.error('NÃO ESTÁ LOGADO!');
       }
@@ -40,25 +40,29 @@
       // fields são os campos que eu desejo pegar do usuário
       var fields;
 
-      fields = 'picture, link, gender, locale, email, cover, timezone, updated_time';
+      fields = 'name, picture, link, gender, locale, email, cover, timezone, updated_time';
 
       FB.api('/me', { fields: fields }, function(response) {
-        console.log('A informação do usuário é: ', response);
+        $rootScope.$broadcast('fb_ok', {
+          user_info: response
+        });
       });
     }
 
     function _handleLogin() {
       FB.login(function(response) {
         if (response.status === 'connected') {
-          console.warn('EFETUANDO LOGIN!');
+          // efetuando login
           _statusChangeCallback(response);
         } else if (response.status === 'not_authorized') {
+          // não autorizado
           console.error('NÃO AUTORIZADO!');
         } else {
+          // não está logado
           console.error('NÃO ESTÁ LOGADO!');
         }
       }, { scope: 'public_profile, email' });
-      // scope: quais permissões o usuário está aceitando fornecer
+      // scope são quais permissões o usuário está aceitando fornecer
     }
 
     // ======
@@ -67,6 +71,10 @@
       login: _login
     }
   }
+
+  Facebook.$inject = [
+    '$rootScope'
+  ];
 
   angular
   .module('Core.fbLogin', [])
