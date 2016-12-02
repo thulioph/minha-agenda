@@ -1,21 +1,21 @@
 (function() {
   'use strict';
 
-  function Google($rootScope) {
+  function Google($rootScope, ApiConfig) {
     function _login() {
       gapi.load('client', _initGogleLogin);
     }
 
     function _initGogleLogin() {
       gapi.client.init({
-        'apiKey': 'AIzaSyDTVFJVhqRTx0-EZADEmMz2giGlyRbzRbw',
-        'discoveryDocs': ['https://people.googleapis.com/$discovery/rest?version=v1'],
-        'clientId': '490787298478-l9t0v16t4es8h8hnset7h18nab6l1gju.apps.googleusercontent.com',
+        'apiKey': ApiConfig.GOOGLE.API_KEY,
+        'discoveryDocs': [ApiConfig.GOOGLE.DOCS],
+        'clientId': ApiConfig.GOOGLE.CLIENT_ID,
         'scope': 'profile'
       }).then(function() {
         gapi.auth2.getAuthInstance().isSignedIn.listen(_updateSigninStatus);
         _updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
-      })
+      });
     }
 
     function _updateSigninStatus(isSignedIn) {
@@ -47,7 +47,8 @@
   }
 
   Google.$inject = [
-    '$rootScope'
+    '$rootScope',
+    'ApiConfig'
   ];
 
   angular
