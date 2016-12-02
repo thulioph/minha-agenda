@@ -6,7 +6,8 @@
       'Core.config',
       'Core.constant',
       'Core.service',
-      'Core.fbLogin'
+      'Core.fbLogin',
+      'Core.glLogin'
     ]
   );
 

@@ -1,13 +1,14 @@
 (function() {
   'use strict';
 
-  function LoginCtrl($rootScope, $scope, Facebook) {
+  function LoginCtrl($rootScope, $scope, Facebook, Google) {
     var vm;
 
     vm = this;
 
     vm.login = {
-      facebook: loginFacebook
+      facebook: loginFacebook,
+      google: loginGoogle
     };
 
     // ====
@@ -16,20 +17,33 @@
       Facebook.login();
     }
 
-    function oAuthUser(evt, obj) {
+    function loginGoogle() {
+      Google.login();
+    }
+
+    function oAuthUserFB(evt, obj) {
       $scope.$apply(function () {
-          vm.user_info = obj.user_info;
+          vm.fb_user_info = obj.user_info;
       });
     }
 
-    $rootScope.$on('fb_ok', oAuthUser);
+    function oAuthUserGL(evt, obj) {
+      $scope.$apply(function () {
+          vm.gl_user_info = obj.user_info;
+      });
+    }
 
+    // ====
+
+    $rootScope.$on('fb_ok', oAuthUserFB);
+    $rootScope.$on('gl_ok', oAuthUserGL);
   }
 
   LoginCtrl.$inject = [
     '$rootScope',
     '$scope',
-    'Facebook'
+    'Facebook',
+    'Google'
   ];
 
   angular

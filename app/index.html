@@ -5,6 +5,8 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
+  <meta name="google-signin-client_id" content="490787298478-l9t0v16t4es8h8hnset7h18nab6l1gju.apps.googleusercontent.com">
+
   <title>Minha Agenda</title>
 
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -51,7 +53,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.js"></script>
 
   <!-- Facebook -->
-  <script>
+  <script async defer>
     (function(d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) return;
@@ -59,6 +61,13 @@
       js.src = "//connect.facebook.net/en_US/sdk.js";
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+  <!-- Google -->
+  <script
+    src="https://apis.google.com/js/platform.js"
+    async
+    defer>
   </script>
 
   <!-- App -->
@@ -72,6 +81,7 @@
   <script src="js/core/core-interceptor.js"></script>
   <script src="js/core/core-service.js"></script>
   <script src="js/core/core-facebook.js"></script>
+  <script src="js/core/core-google.js"></script>
 
   <!-- Home -->
   <script src="js/home/home-module.js"></script>

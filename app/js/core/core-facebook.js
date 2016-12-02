@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  function Facebook($rootScope) {
+  function Facebook($rootScope, ApiConfig) {
     //
     // 1. é necessário obter a permissão do usuário pra se obter
     // o nome e o id
@@ -9,7 +9,7 @@
 
     function _login() {
       FB.init({
-        appId: '1403969292947889',
+        appId: ApiConfig.FACEBOOK.APP_ID,
         cookie: true,
         xfbml: true,
         version: 'v2.8'
@@ -73,7 +73,8 @@
   }
 
   Facebook.$inject = [
-    '$rootScope'
+    '$rootScope',
+    'ApiConfig'
   ];
 
   angular
