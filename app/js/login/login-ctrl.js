@@ -1,11 +1,11 @@
 (function() {
   'use strict';
 
-  function LoginCtrl($rootScope, $scope, Facebook, Google, ngProgressFactory) {
+  function LoginCtrl($rootScope, $scope, Facebook, Google, CoreService) {
     var vm;
 
     vm = this;
-    vm.progressbar = ngProgressFactory.createInstance();
+    vm.progressbar = CoreService.progressbar;
 
     vm.login = {
       facebook: loginFacebook,
@@ -53,7 +53,7 @@
     '$scope',
     'Facebook',
     'Google',
-    'ngProgressFactory'
+    'CoreService'
   ];
 
   angular

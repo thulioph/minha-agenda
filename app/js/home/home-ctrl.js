@@ -1,11 +1,11 @@
 (function() {
   'use strict';
 
-  function HomeCtrl(CoreService, $rootScope, ngProgressFactory) {
+  function HomeCtrl(CoreService, $rootScope) {
     var vm;
 
     vm = this;
-    vm.progressbar = ngProgressFactory.createInstance();
+    vm.progressbar = CoreService.progressbar;
     vm.form = {};
 
     // ====
@@ -34,8 +34,7 @@
 
   HomeCtrl.$inject = [
     'CoreService',
-    '$rootScope',
-    'ngProgressFactory'
+    '$rootScope'
   ];
 
   angular

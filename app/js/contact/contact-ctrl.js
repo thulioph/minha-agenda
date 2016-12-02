@@ -1,11 +1,11 @@
 (function() {
   'use strict';
 
-  function ContactCtrl($routeParams, $location, CoreService, ngProgressFactory) {
+  function ContactCtrl($routeParams, $location, CoreService) {
     var vm;
 
     vm = this;
-    vm.progressbar = ngProgressFactory.createInstance();
+    vm.progressbar = CoreService.progressbar;
 
     // ====
 
@@ -61,8 +61,7 @@
   ContactCtrl.$inject = [
     '$routeParams',
     '$location',
-    'CoreService',
-    'ngProgressFactory'
+    'CoreService'
   ];
 
   angular
