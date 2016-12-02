@@ -6,7 +6,6 @@
 
     vm = this;
 
-    vm.user_info = {};
     vm.login = {
       facebook: loginFacebook
     };

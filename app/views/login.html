@@ -3,7 +3,7 @@
     Login com Facebook
   </button>
 
-  <aside>
+  <aside ng-if="vm.user_info">
     <strong>Nome</strong>
     <p>{{ vm.user_info.name }}</p>
 
