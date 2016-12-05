@@ -3,7 +3,8 @@
 
   angular.module('Error',
     [
-      'Error.notfound'
+      'Error.notfound',
+      'Error.unauthorized'
     ]
   );
 })();

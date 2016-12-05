@@ -23,6 +23,11 @@
         controller: 'NotFoundCtrl',
         controllerAs: 'vm'
       })
+      .when('/error/401', {
+        templateUrl: 'views/401.html',
+        controller: 'UnAuthorizedCtrl',
+        controllerAs: 'vm'
+      })
       .when('/login', {
         templateUrl: 'views/login.html',
         controller: 'LoginCtrl',
