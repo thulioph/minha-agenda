@@ -1,11 +1,13 @@
 var express, app, logger, cookieParser, bodyParser, cors,
-contact;
+contact, expressJWT, jwt;
 
 express = require('express');
 logger = require('morgan');
 cookieParser = require('cookie-parser');
 bodyParser = require('body-parser');
 cors = require('cors');
+expressJWT = require('express-jwt');
+jwt = require('jsonwebtoken');
 
 // ==========
 
@@ -16,6 +18,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(expressJWT({ secret: 'w3c porra' }).unless({ path: ['/contact'] }));
 
 // ==========
 
