@@ -5,17 +5,22 @@
     var vm;
 
     vm = this;
+    vm.progressbar = CoreService.progressbar;
     vm.form = {};
 
     // ====
 
     function addContact() {
+      vm.progressbar.start();
+
       var params;
 
       params = vm.form;
 
       CoreService.addContact(params).then(function(result) {
         vm.last_created = result;
+
+        vm.progressbar.complete();
       });
 
       vm.form = {};

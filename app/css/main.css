@@ -14,3 +14,19 @@
   line-height: 2.8rem;
   padding: 0 1.5rem;
 }
+
+body {
+  -webkit-transition: all, .25s, linear, 0s;
+  -o-transition: all, .25s, linear, 0s;
+  transition: all, .25s, linear, 0s;
+}
+
+body.offline .button {
+  background-color: #D1D1D1;
+  border-color: #A2A0A0;
+  color: #A2A0A0;
+}
+
+body.offline a {
+  color: #D1D1D1;
+}

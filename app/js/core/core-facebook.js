@@ -26,7 +26,9 @@
         // vai abrir a janela do facebook pra login
         _handleLogin();
       } else {
-        console.error('NÃO ESTÁ LOGADO!');
+        // vai abrir a janela do facebook pra login
+        // o usuário não está logado
+        _handleLogin();
       }
     }
 

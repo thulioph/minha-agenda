@@ -5,12 +5,17 @@
     var vm;
 
     vm = this;
+    vm.progressbar = CoreService.progressbar;
 
     // ====
 
     function getContacts() {
+      vm.progressbar.start();
+
       CoreService.listContacts().then(function(data) {
         vm.contacts = data;
+
+        vm.progressbar.complete();
       });
     }
 
