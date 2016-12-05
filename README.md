@@ -1,10 +1,10 @@
 ## Minha Agenda
 
-[![Code Climate](https://codeclimate.com/github/thulioph/minha-agenda/badges/gpa.svg)](https://codeclimate.com/github/thulioph/minha-agenda) [![Just for fun.](https://img.shields.io/badge/just%20for-fun-47B500.svg)](https://github.com/thulioph/minha-agenda)
-
 > Forneça: **nome**, **telefone**, **e-mail** e uma **nota** para cadastrar um contato.
 
-## Objetivo
+[![Demo Online.](https://img.shields.io/badge/demo-online-green.svg)](https://thulioph.github.io/minha-agenda/app/) [![Issues](https://img.shields.io/github/issues/thulioph/minha-agenda.svg)](https://github.com/thulioph/minha-agenda/issues) [![Stars](https://img.shields.io/github/stars/thulioph/minha-agenda.svg)](https://github.com/thulioph/minha-agenda/stargazers) [![Code Climate](https://codeclimate.com/github/thulioph/minha-agenda/badges/gpa.svg)](https://codeclimate.com/github/thulioph/minha-agenda)
+
+## Sobre
 
 Esta aplicação tem o objetivo de testar as habilidades e conhecimentos de desenvolvimento de um sistema utilizando a **MEAN** stack, que vai desde a sua concepção até a publicação. Está sendo utilizado **Github pages** para publicação dos arquivos de **Frontend**, para publicação dos arquivos de **backend** o **Heroku**, e para o **banco de dados** está sendo utilizado o **mLab**.
 
