@@ -2,6 +2,9 @@
   'use strict';
 
   function ApiService($log, $http, $q, ApiConfig, $route, $rootScope, ngProgressFactory) {
+
+    // contatos
+    // =====
     function _listContacts() {
 
       function success(response) {
@@ -74,6 +77,39 @@
       return $http.delete(ApiConfig.API_URL + '/contact/delete/' + id).then(success).catch(error);
     }
 
+
+    // Users
+    // =====
+    function _addNewUser(obj) {
+      function success(response) {
+        return response.data;
+      }
+
+      function error(err) {
+        $log.error(err);
+        return $q.reject(error.status);
+      }
+
+      return $http.post(ApiConfig.API_URL + '/api/users/create', obj).then(success).catch(error);
+    }
+
+    function _listAllUsers(obj) {
+      function success(response) {
+        return response.data;
+      }
+
+      function error(err) {
+        $log.error(err);
+        return $q.reject(error.status);
+      }
+
+      return $http.get(ApiConfig.API_URL + '/api/users').then(success).catch(error);
+    }
+
+
+    // gerais
+    // =====
+
     function _progressBarInit() {
       $rootScope.progressbar = ngProgressFactory.createInstance();
       $rootScope.progressbar.setColor('#9B4DCA');
@@ -101,6 +137,10 @@
         init: _progressBarInit(), // já inicia criando uma instância
         start: _progressBarStart,
         complete: _progressBarComplete
+      },
+      contato: {
+        register: _addNewUser,
+        list: _listAllUsers
       }
     }
   }

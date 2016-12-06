@@ -9,51 +9,25 @@
     </button>
   </header>
 
-  <aside ng-if="vm.fb_user_info">
+  <aside ng-if="vm.user_info">
     <strong>Nome</strong>
-    <p>{{ vm.fb_user_info.name }}</p>
+    <p>{{ vm.user_info.name }}</p>
 
     <strong>E-mail</strong>
-    <p>{{ vm.fb_user_info.email }}</p>
+    <p>{{ vm.user_info.email }}</p>
 
     <strong>Sexo</strong>
-    <p>{{ vm.fb_user_info.gender }}</p>
+    <p>{{ vm.user_info.gender }}</p>
 
     <strong>id</strong>
-    <p>{{ vm.fb_user_info.id }}</p>
+    <p>{{ vm.user_info.social_id }}</p>
+
+    <strong>social</strong>
+    <p>{{ vm.user_info.social }}</p>
 
     <strong>Foto do perfil</strong>
     <figure>
-      <img ng-src="{{ vm.fb_user_info.picture.data.url }}" alt="">
-    </figure>
-
-    <strong>Cover image</strong>
-    <figure>
-      <img ng-src="{{ vm.fb_user_info.cover.source }}" alt="">
-    </figure>
-  </aside>
-
-  <aside ng-if="vm.gl_user_info">
-    <strong>Nome</strong>
-    <p>{{ vm.gl_user_info.names[0].displayName }}</p>
-
-    <strong>E-mail</strong>
-    <p>{{ vm.gl_user_info.emailAddresses[0].value }}</p>
-
-    <strong>Sexo</strong>
-    <p>{{ vm.gl_user_info.genders[0].value }}</p>
-
-    <strong>id</strong>
-    <p>{{ vm.gl_user_info.metadata.sources[0].id }}</p>
-
-    <strong>Foto do perfil</strong>
-    <figure>
-      <img ng-src="{{ vm.gl_user_info.photos[0].url }}" alt="">
-    </figure>
-
-    <strong>Cover image</strong>
-    <figure>
-      <img ng-src="{{ vm.gl_user_info.coverPhotos[0].url }}" alt="">
+      <img ng-src="{{ vm.user_info.picture }}" alt="">
     </figure>
   </aside>
 </section>

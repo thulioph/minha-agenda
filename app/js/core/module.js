@@ -5,6 +5,7 @@
     [
       'Core.config',
       'Core.constant',
+      'Core.auth',
       'Core.service',
       'Core.fbLogin',
       'Core.glLogin'
