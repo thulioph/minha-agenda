@@ -5,7 +5,7 @@ mongoose = require('mongoose');
 // conectando com o mongodb
 // ==========
 
-mongoose.connect('mongodb://localhost/cbtu');
+mongoose.connect('mongodb://heroku_n4v2w94s:51guuvojkv9ud933r9qiq79ui0@ds157987.mlab.com:57987/heroku_n4v2w94s');
 
 db = mongoose.connection;
 
