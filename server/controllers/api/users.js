@@ -7,16 +7,12 @@ User = mongoose.model('User');
 function add(req, res) {
   var model;
 
-  console.log('BOOOODDDY- >', req.body);
-
   model = new User(req.body);
 
   model.save(function(err, data) {
     if (err) {
-      console.log('ERRRORRR- >', err);
       res.json(err);
     } else {
-      console.log('SUUCESSSS- >', data);
       res.json(data);
     }
   });
