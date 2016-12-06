@@ -28,7 +28,8 @@
       'Contacts',
       'Contact',
       'ngRoute',
-      'ngProgress'
+      'ngProgress',
+      'ngOpbeat'
     ]
   ).run(runApp);
 })();
