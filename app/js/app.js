@@ -30,5 +30,5 @@
       'ngRoute',
       'ngProgress'
     ]
-  ).run(runAppMano);
+  ).run(runApp);
 })();
