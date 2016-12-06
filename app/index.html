@@ -76,7 +76,19 @@
 
   <!-- Opbeat -->
   <script
-    src="https://d3tvtfb6518e3e.cloudfront.net/3/opbeat-angular.min.js">
+    src="https://d3tvtfb6518e3e.cloudfront.net/3/opbeat-angular.min.js"
+    async>
+  </script>
+
+  <script>
+    _opbeat = window._opbeat || function() {
+      (window._opbeat.q = window._opbeat.q || []).push(arguments)
+    };
+
+    _opbeat('config', {
+      orgId: '4b348a81e1c34a42b5913e67d300cd43',
+      appId: '18fed1c5b7'
+    });
   </script>
 
   <!-- App -->
