@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  function CoreService($log, $http, $q, ApiConfig, $route, $rootScope, ngProgressFactory) {
+  function ApiService($log, $http, $q, ApiConfig, $route, $rootScope, ngProgressFactory) {
     function _listContacts() {
 
       function success(response) {
@@ -105,7 +105,7 @@
     }
   }
 
-  CoreService.$inject = [
+  ApiService.$inject = [
     '$log',
     '$http',
     '$q',
@@ -117,5 +117,5 @@
 
   angular
   .module('Core.service', [])
-  .service('CoreService', CoreService);
+  .service('ApiService', ApiService);
 })();

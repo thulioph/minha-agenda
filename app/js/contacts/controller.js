@@ -1,18 +1,18 @@
 (function() {
   'use strict';
 
-  function ContactsCtrl(CoreService, $rootScope) {
+  function ContactsCtrl(ApiService, $rootScope) {
     var vm;
 
     vm = this;
-    vm.progressbar = CoreService.progressbar;
+    vm.progressbar = ApiService.progressbar;
 
     // ====
 
     function getContacts() {
       vm.progressbar.start();
 
-      CoreService.listContacts().then(function(data) {
+      ApiService.listContacts().then(function(data) {
         vm.contacts = data;
 
         vm.progressbar.complete();
@@ -22,11 +22,11 @@
     // ====
 
     vm.getContacts = getContacts();
-    $rootScope.route = CoreService.getRoute();
+    $rootScope.route = ApiService.getRoute();
   }
 
   ContactsCtrl.$inject = [
-    'CoreService',
+    'ApiService',
     '$rootScope'
   ];
 
