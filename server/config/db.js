@@ -38,3 +38,4 @@ process.on('SIGINT', function() {
 });
 
 require('../models/contact.js');
+require('../models/user.js');

@@ -1,5 +1,5 @@
 var express, app, logger, cookieParser, bodyParser, cors,
-contact, expressJWT, jwt;
+contact, expressJWT, jwt, ApiUsers;
 
 express = require('express');
 logger = require('morgan');
@@ -23,8 +23,10 @@ app.use(cookieParser());
 // ==========
 
 contact = require('../server/routes/contact.js');
+ApiUsers = require('../server/routes/api/users.js');
 
 app.use('/contact', contact);
+app.use('/api/users', ApiUsers);
 
 // 404
 app.use(function(req, res, next) {
