@@ -4,7 +4,8 @@
   var ApiConfig;
 
   ApiConfig = {
-    'API_URL': 'https://minhaagenda-api.herokuapp.com',
+    'API_URL': 'http://localhost:3000',
+    'API_URL_PROD': 'https://minhaagenda-api.herokuapp.com',
     'GOOGLE': {
       'API_KEY': 'AIzaSyDTVFJVhqRTx0-EZADEmMz2giGlyRbzRbw',
       'DOCS': 'https://people.googleapis.com/$discovery/rest?version=v1',
