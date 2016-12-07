@@ -42,15 +42,20 @@
 
     function oAuthUserGL(evt, obj) {
 
+      console.info(obj.user_info);
+
       var user_obj;
 
       user_obj = {
         name: obj.user_info.names[0].displayName,
         email: obj.user_info.emailAddresses[0].value,
-        gender: obj.user_info.genders[0].value,
         social_id: obj.user_info.metadata.sources[0].id,
         picture: obj.user_info.photos[0].url
       };
+
+      if (obj.user_info.genders) {
+        user_obj.gender = obj.user_info.genders[0].value
+      }
 
       Auth.Google(user_obj);
     }
