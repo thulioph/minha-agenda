@@ -29,6 +29,9 @@ Esta aplicação tem o objetivo de testar as habilidades e conhecimentos de dese
 - [Heroku][heroku]
 - [mLab][mLab]
 
+#### monitoramento
+- [Opbeat][opbeat]
+
 ## Setup
 
 1. Realize o **download das dependências** do projeto com os comandos:
@@ -114,3 +117,5 @@ Existem atualmente dois modelos de autenticação:
 [fb-getdata]: https://developers.facebook.com/docs/javascript/reference/FB.api "Realizo o get das informações do usuário"
 
 [gl-login]: https://developers.google.com/api-client-library/javascript/samples/samples "Como realizar autenticação utilizando o Google"
+
+[opbeat]: https://opbeat.com/ "Monitoramento de performance e erros"
