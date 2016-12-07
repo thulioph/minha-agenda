@@ -17,12 +17,11 @@ UserSchema = new Schema ({
     type: String,
     default: '',
     required: true,
-    uniq: true
+    unique: true
   },
   gender: {
     type: String,
-    default: '',
-    required: true
+    default: ''
   },
   social: {
     type: String,
