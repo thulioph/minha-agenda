@@ -1,11 +1,13 @@
 var express, app, logger, cookieParser, bodyParser, cors,
-contact;
+contact, expressJWT, jwt, ApiUsers;
 
 express = require('express');
 logger = require('morgan');
 cookieParser = require('cookie-parser');
 bodyParser = require('body-parser');
 cors = require('cors');
+// expressJWT = require('express-jwt');
+// jwt = require('jsonwebtoken');
 
 // ==========
 
@@ -16,12 +18,15 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+// app.use(expressJWT({ secret: 'w3c porra' }).unless({ path: ['/contact'] }));
 
 // ==========
 
 contact = require('../server/routes/contact.js');
+ApiUsers = require('../server/routes/api/users.js');
 
 app.use('/contact', contact);
+app.use('/api/users', ApiUsers);
 
 // 404
 app.use(function(req, res, next) {

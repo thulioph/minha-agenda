@@ -23,6 +23,7 @@
       'Core',
       'Error',
       'Login',
+      'Cadastro',
       'Home',
       'Contacts',
       'Contact',

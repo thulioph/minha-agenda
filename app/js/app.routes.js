@@ -3,7 +3,7 @@
 
   function ConfigApp($routeProvider) {
     $routeProvider
-      .when('/', {
+      .when('/home', {
         templateUrl: 'views/home.html',
         controller: 'HomeCtrl',
         controllerAs: 'vm'
@@ -23,13 +23,23 @@
         controller: 'NotFoundCtrl',
         controllerAs: 'vm'
       })
+      .when('/error/401', {
+        templateUrl: 'views/401.html',
+        controller: 'UnAuthorizedCtrl',
+        controllerAs: 'vm'
+      })
       .when('/login', {
         templateUrl: 'views/login.html',
         controller: 'LoginCtrl',
         controllerAs: 'vm'
       })
+      .when('/cadastro', {
+        templateUrl: 'views/cadastro.html',
+        controller: 'CadastroCtrl',
+        controllerAs: 'vm'
+      })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/login'
       });
   }
 

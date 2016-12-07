@@ -1,11 +1,11 @@
 (function() {
   'use strict';
 
-  function HomeCtrl(CoreService, $rootScope) {
+  function HomeCtrl(ApiService, $rootScope) {
     var vm;
 
     vm = this;
-    vm.progressbar = CoreService.progressbar;
+    vm.progressbar = ApiService.progressbar;
     vm.form = {};
 
     // ====
@@ -17,7 +17,7 @@
 
       params = vm.form;
 
-      CoreService.addContact(params).then(function(result) {
+      ApiService.addContact(params).then(function(result) {
         vm.last_created = result;
 
         vm.progressbar.complete();
@@ -29,11 +29,11 @@
     // ====
 
     vm.addContact = addContact;
-    $rootScope.route = CoreService.getRoute();
+    $rootScope.route = ApiService.getRoute();
   }
 
   HomeCtrl.$inject = [
-    'CoreService',
+    'ApiService',
     '$rootScope'
   ];
 

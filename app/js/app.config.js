@@ -3,6 +3,7 @@
 
 function AppConfig($httpProvider) {
   $httpProvider.interceptors.push('NotFoundInterceptor');
+  $httpProvider.interceptors.push('AuthInterceptor');
 }
 
 AppConfig.$inject = [

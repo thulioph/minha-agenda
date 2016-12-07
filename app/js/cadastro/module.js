@@ -1,9 +1,10 @@
 (function() {
   'use strict';
 
-  angular.module('Error',
+  angular
+  .module('Cadastro',
     [
-      'Error.notfound'
+      'Cadastro.ctrl'
     ]
   );
 })();
