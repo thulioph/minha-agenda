@@ -1,7 +1,7 @@
 var mongoose,User, obj, db;
 
 mongoose = require('mongoose');
-db = require('../../config/db.js');
+db = require('../config/db.js');
 User = mongoose.model('User');
 
 function add(req, res) {

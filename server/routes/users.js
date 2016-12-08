@@ -2,7 +2,7 @@ var express, mongoose, Users, router;
 
 express = require('express');
 mongoose = require('mongoose');
-Users = require('../../controllers/api/users.js');
+Users = require('../controllers/users.js');
 
 router = express.Router();
 
