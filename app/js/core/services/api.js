@@ -16,7 +16,7 @@
         return $q.reject(error.status);
       }
 
-      return $http.get(ApiConfig.API_URL + '/contact').then(success).catch(error);
+      return $http.get(ApiConfig.API_URL_PROD + '/contact').then(success).catch(error);
     }
 
     function _getRoute() {
@@ -34,7 +34,7 @@
         return $q.reject(error.status);
       }
 
-      return $http.post(ApiConfig.API_URL + '/contact/create', obj).then(success).catch(error);
+      return $http.post(ApiConfig.API_URL_PROD + '/contact/create', obj).then(success).catch(error);
     }
 
     function _getContact(id) {
@@ -48,7 +48,7 @@
         return $q.reject(error.status);
       }
 
-      return $http.get(ApiConfig.API_URL + '/contact/' + id).then(success).catch(error);
+      return $http.get(ApiConfig.API_URL_PROD + '/contact/' + id).then(success).catch(error);
     }
 
     function _editContact(obj) {
@@ -61,7 +61,7 @@
         return $q.reject(error.status);
       }
 
-      return $http.put(ApiConfig.API_URL + '/contact/edit/' + obj._id, obj).then(success).catch(error);
+      return $http.put(ApiConfig.API_URL_PROD + '/contact/edit/' + obj._id, obj).then(success).catch(error);
     }
 
     function _removeContact(id) {
@@ -74,7 +74,7 @@
         return $q.reject(error.status);
       }
 
-      return $http.delete(ApiConfig.API_URL + '/contact/delete/' + id).then(success).catch(error);
+      return $http.delete(ApiConfig.API_URL_PROD + '/contact/delete/' + id).then(success).catch(error);
     }
 
 
@@ -90,7 +90,7 @@
         return $q.reject(error.status);
       }
 
-      return $http.post(ApiConfig.API_URL + '/api/users/create', obj).then(success).catch(error);
+      return $http.post(ApiConfig.API_URL_PROD + '/api/users/create', obj).then(success).catch(error);
     }
 
     function _listAllUsers(obj) {
@@ -103,7 +103,7 @@
         return $q.reject(error.status);
       }
 
-      return $http.get(ApiConfig.API_URL + '/api/users').then(success).catch(error);
+      return $http.get(ApiConfig.API_URL_PROD + '/api/users').then(success).catch(error);
     }
 
 
