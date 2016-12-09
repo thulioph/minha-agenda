@@ -4,6 +4,21 @@
   </ion-header-bar>
 
   <ion-content data-tap-disabled="true">
-    {{user}}
+    <div class="list card">
+
+      <div class="item item-avatar">
+        <img ng-src="{{user.picture}}">
+        <h2>{{user.name}}</h2>
+        <p>{{user.email}}</p>
+      </div>
+
+      <div class="item item-body">
+        <p>
+          <a href="#" class="subdued">1 Like</a>
+          <a href="#" class="subdued">5 Comments</a>
+        </p>
+      </div>
+
+    </div>
   </ion-content>
 </ion-view>

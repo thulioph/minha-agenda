@@ -16,8 +16,6 @@
     // ====
 
     function _signupWithFacebook() {
-      console.warn('Cadastro com Facebook');
-      // ApiService.signup();
       Facebook.login();
     }
 
