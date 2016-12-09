@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  function CadastroCtrl($rootScope, ApiService, $state, Facebook) {
+  function CadastroCtrl($rootScope, ApiService, $state, Facebook, Utils) {
     var vm;
 
     vm = this;
@@ -16,6 +16,8 @@
     // ====
 
     function _signupWithFacebook() {
+      Utils.progressbar.start();
+
       Facebook.login();
     }
 
@@ -38,6 +40,8 @@
       ApiService.signup(user_obj).then(function(result) {
         $rootScope.user = result;
         $state.go('home');
+
+        Utils.progressbar.complete();
       });
     }
 
@@ -50,7 +54,8 @@
     '$rootScope',
     'ApiService',
     '$state',
-    'Facebook'
+    'Facebook',
+    'Utils'
   ];
 
   angular

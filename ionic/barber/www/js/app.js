@@ -14,7 +14,8 @@ angular.module('starter',
     'Barber.equipe',
     'Barber.membro',
     'Barber.barbearia',
-    'Core'
+    'Core',
+    'ngProgress'
   ]
 )
 
