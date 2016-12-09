@@ -5,7 +5,10 @@
 
   ApiConfig = {
     'API_URL': 'http://localhost:3000',
-    'API_URL_PROD': 'https://minhaagenda-api.herokuapp.com'
+    'API_URL_PROD': 'https://minhaagenda-api.herokuapp.com',
+    'FACEBOOK': {
+      'APP_ID': '1403969292947889'
+    }
   };
 
   angular

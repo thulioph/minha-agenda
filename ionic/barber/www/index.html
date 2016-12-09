@@ -36,6 +36,8 @@
     <!-- Core -->
     <script src="js/core/module.js"></script>
     <script src="js/core/services/api.js"></script>
+    <script src="js/core/services/facebook.js"></script>
+    <script src="js/core/services/google.js"></script>
     <script src="js/core/directives/hide-tabs.js"></script>
 
     <!-- Splash -->
@@ -77,7 +79,20 @@
     </div>
 
     <!-- Google Maps -->
-    <script src="https://maps.googleapis.com/maps/api/js">
+    <script
+      src="https://maps.googleapis.com/maps/api/js">
     </script>
+
+    <!-- Facebook -->
+    <script async defer>
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
+
   </body>
 </html>

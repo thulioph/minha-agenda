@@ -1,37 +1,59 @@
 (function() {
   'use strict';
 
-  function CadastroCtrl() {
+  function CadastroCtrl($rootScope, ApiService, $state, Facebook) {
     var vm;
 
     vm = this;
 
     // ====
 
-    vm.cadastro = cadasto;
+    vm.cadastro = {
+      facebook: _signupWithFacebook,
+      google: _signupWithGoogle
+    };
 
     // ====
 
-    function cadasto(value) {
-      switch(value) {
-        case 'facebook':
-          _loginWithFacebook();
-        break;
-
-        case 'google':
-          _loginWithGoogle();
-        break;
-      }
-    }
-
-    function _loginWithFacebook() {
+    function _signupWithFacebook() {
       console.warn('Cadastro com Facebook');
+      // ApiService.signup();
+      Facebook.login();
     }
 
-    function _loginWithGoogle() {
+    function _signupWithGoogle() {
       console.warn('Cadastro com Google');
     }
+
+    function SignupFacebook(evt, obj) {
+      var user_obj;
+
+      user_obj = {
+        name: obj.user_info.name,
+        email: obj.user_info.email,
+        gender: obj.user_info.gender,
+        social_id: obj.user_info.id,
+        picture: obj.user_info.picture.data.url,
+        social: 'facebook'
+      };
+
+      ApiService.signup(user_obj).then(function(result) {
+        $rootScope.user = result;
+        $state.go('home');
+      });
+    }
+
+    // ====
+
+    $rootScope.$on('fb_ok', SignupFacebook);
   }
+
+  CadastroCtrl.$inject = [
+    '$rootScope',
+    'ApiService',
+    '$state',
+    'Facebook'
+  ];
 
   angular
   .module('Barber.cadastro')

@@ -1,14 +1,9 @@
-<div
-  ng-include
-  src='"views/templates/tabs.tmpl.html"'>
-</div>
+<ion-view view-title="Barbearia 081 - Home">
+  <ion-header-bar align-title="center" class="bar-dark">
+    <h1 class="title">Home</h1>
+  </ion-header-bar>
 
-<ion-view title="Bem Vindos">
-  <ion-content>
-    <div class="row">
-      <div class="col">
-        <h1>Home</h1>
-      </div>
-    </div>
+  <ion-content data-tap-disabled="true">
+    {{user}}
   </ion-content>
 </ion-view>
