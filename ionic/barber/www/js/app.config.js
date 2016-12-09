@@ -3,6 +3,16 @@
 
   function ModuleConfig($stateProvider, $urlRouterProvider) {
     $stateProvider
+      .state('login', {
+        url: '/login',
+        templateUrl: '/views/login.html',
+        controller: 'LoginCtrl'
+      })
+      .state('cadastro', {
+        url: '/cadastro',
+        templateUrl: '/views/cadastro.html',
+        controller: 'CadastroCtrl'
+      })
       .state('home', {
         url: '/home',
         templateUrl: '/views/home.html',
@@ -24,7 +34,7 @@
         controller: 'EquipeCtrl'
       });
 
-      $urlRouterProvider.otherwise('/home');
+      $urlRouterProvider.otherwise('/login');
   }
 
   angular

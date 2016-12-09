@@ -6,6 +6,8 @@
 angular.module('starter',
   [
     'ionic',
+    'Barber.login',
+    'Barber.cadastro',
     'Barber.home',
     'Barber.horarios',
     'Barber.equipe',
