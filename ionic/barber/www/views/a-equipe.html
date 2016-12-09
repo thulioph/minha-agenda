@@ -5,34 +5,10 @@
 
   <ion-content data-tap-disabled="true">
     <div class="list card">
-      <a href="#/equipe/1" class="item item-avatar barber-worker">
-        <img src="http://dummyimage.com/100x100/4d494d/686a82.gif&text=placeholder+image" alt="placeholder+image">
-        <h2>Raul Lima</h2>
-        <p>Sócio Proprietário</p>
-      </a>
-
-      <a href="#/equipe/2" class="item item-avatar barber-worker">
-        <img src="http://dummyimage.com/100x100/4d494d/686a82.gif&text=placeholder+image" alt="placeholder+image">
-        <h2>Caio</h2>
-        <p>Sócio Proprietário</p>
-      </a>
-
-      <a href="#/equipe/3" class="item item-avatar barber-worker">
-        <img src="http://dummyimage.com/100x100/4d494d/686a82.gif&text=placeholder+image" alt="placeholder+image">
-        <h2>Rasta</h2>
-        <p>Desenrolado</p>
-      </a>
-
-      <a href="#/equipe/4" class="item item-avatar barber-worker">
-        <img src="http://dummyimage.com/80x80/4d494d/686a82.gif&text=placeholder+image" alt="placeholder+image">
-        <h2>Outra Pessoa</h2>
-        <p>Barbeiro</p>
-      </a>
-
-      <a href="#/equipe/5" class="item item-avatar barber-worker">
-        <img src="http://dummyimage.com/80x80/4d494d/686a82.gif&text=placeholder+image" alt="placeholder+image">
-        <h2>Felipe</h2>
-        <p>Tatuador</p>
+      <a ng-href="#/equipe/{{user.id}}" class="item item-avatar barber-worker" ng-repeat="user in vm.team">
+        <img ng-src="{{user.image}}" alt="placeholder+image">
+        <h2>{{user.name}}</h2>
+        <p>{{user.role}}</p>
       </a>
     </div>
   </ion-content>

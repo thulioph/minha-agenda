@@ -1,14 +1,14 @@
 <ion-view view-title="Barbearia 081 - A Equipe">
   <ion-header-bar align-title="center" class="bar-dark">
-    <h1 class="title">Raul Lima</h1>
+    <h1 class="title">{{teamMember.name}}</h1>
   </ion-header-bar>
 
   <ion-content data-tap-disabled="true">
     <div class="list card">
       <div class="item item-avatar">
-        <img src="http://dummyimage.com/100x100/4d494d/686a82.gif&text=placeholder+image" alt="placeholder+image">
-        <h2>Raul Lima</h2>
-        <p>Sócio Proprietário</p>
+        <img ng-src="{{teamMember.image}}" alt="placeholder+image">
+        <h2>{{teamMember.name}}</h2>
+        <p>{{teamMember.role}}</p>
       </div>
 
       <div class="item item-body">
@@ -16,7 +16,7 @@
 
 
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui ullam accusamus, voluptatem quasi molestias sint, odit aspernatur. Error incidunt fugit, maiores repudiandae dolor dolorum, assumenda itaque corrupti vel, atque dolore.
+          {{teamMember.description}}
         </p>
 
         <p>

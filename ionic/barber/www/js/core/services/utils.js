@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  function Utils($rootScope, ngProgressFactory) {
+  function Utils($http, $q, $rootScope, ngProgressFactory) {
 
     //
     // Progressbar
@@ -21,6 +21,25 @@
       return $rootScope.progressbar.complete();
     }
 
+
+    //
+    // Team
+    //
+
+    function _getTeam() {
+      var url = 'https://gist.githubusercontent.com/thulioph/d440db6737563c6616faf7b4a35e2942/raw/e8f8bd2fb9d1aab3c32e8acc304bf55c664afbcf/barbers.json';
+
+      function success(response) {
+        return response.data;
+      }
+
+      function error(err) {
+        return $q.reject(error.status);
+      }
+
+      return $http.get(url).then(success).catch(error);
+    }
+
     // ====
 
     return {
@@ -28,11 +47,14 @@
         init: _progressBarInit(),
         start: _progressBarStart,
         complete: _progressBarComplete
-      }
+      },
+      team: _getTeam
     }
   }
 
   Utils.$inject = [
+    '$http',
+    '$q',
     '$rootScope',
     'ngProgressFactory'
   ];
