@@ -2,7 +2,27 @@
   'use strict';
 
   function LoginCtrl() {
-    console.log('LoginCtrl');
+    var vm;
+
+    vm = this;
+
+    vm.login = {
+      facebook: loginFacebook,
+      google: loginGoogle
+    };
+
+    // ====
+
+    function loginFacebook() {
+      console.warn('Facebook');
+    }
+
+    function loginGoogle() {
+      console.warn('Google');
+    }
+
+    // ====
+
   }
 
   angular

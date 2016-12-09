@@ -1,14 +1,27 @@
-<ion-view title="Login">
-  <ion-content>
-    <h1>Login</h1>
+<ion-content>
+  <div class="row logo-container">
+    <div class="col col-50 col-offset-25">
+      <figure>
+        <img src="http://dummyimage.com/150x150/4d494d/686a82.gif&text=placeholder+image" alt="placeholder+image">
+      </figure>
+    </div>
+  </div>
 
-    <!-- <div class="list">
-      <div class="item">
-        @IonicFramework
-      </div>
-      <div class="item">
-        @DriftyTeam
-      </div>
-    </div> -->
-  </ion-content>
-</ion-view>
+  <div class="row">
+    <div class="col">
+      <button class="button button-full button-dark"
+        ng-click="vm.login.facebook()">
+        Entrar com Facebook
+      </button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <button class="button button-full button-dark"
+        ng-click="vm.login.google()">
+        Entrar com Google
+      </button>
+    </div>
+  </div>
+</ion-content>
