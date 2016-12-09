@@ -18,6 +18,22 @@ function add(req, res) {
   });
 }
 
+function getById(req, res) {
+  var query;
+
+  query = {
+    social_id: req.params.id
+  };
+
+  User.findOne(query, function(err, data) {
+    if (err) {
+      res.json(err);
+    } else {
+      res.json(data);
+    }
+  });
+}
+
 function listAll(res) {
   var query;
 
@@ -34,6 +50,7 @@ function listAll(res) {
 
 obj = {
   create: add,
+  get: getById,
   list: listAll
 };
 
