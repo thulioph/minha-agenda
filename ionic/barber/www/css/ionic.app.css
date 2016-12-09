@@ -9842,3 +9842,10 @@ body {
   margin: 60px 0; }
   .logo-container img {
     max-width: 100%; }
+
+.section-splash {
+  background-image: url("../img/bg-splash.jpg");
+  height: 565px;
+  padding-top: 145%;
+  background-size: cover;
+  background-repeat: no-repeat; }

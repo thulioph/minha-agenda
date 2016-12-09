@@ -3,6 +3,12 @@
 
   function ModuleConfig($stateProvider, $urlRouterProvider) {
     $stateProvider
+      .state('splash', {
+        url: '/',
+        templateUrl: '/views/splash.html',
+        controller: 'SplashCtrl',
+        controllerAs: 'vm'
+      })
       .state('login', {
         url: '/login',
         templateUrl: '/views/login.html',
@@ -46,7 +52,7 @@
         controllerAs: 'vm'
       });
 
-      $urlRouterProvider.otherwise('/login');
+      $urlRouterProvider.otherwise('/');
   }
 
   angular
