@@ -11,6 +11,7 @@ angular.module('starter',
     'Barber.home',
     'Barber.horarios',
     'Barber.equipe',
+    'Barber.membro',
     'Barber.barbearia'
   ]
 )

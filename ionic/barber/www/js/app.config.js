@@ -38,6 +38,12 @@
         templateUrl: '/views/a-equipe.html',
         controller: 'EquipeCtrl',
         controllerAs: 'vm'
+      })
+      .state('membro', {
+        url: '/equipe/:id',
+        templateUrl: '/views/membro.html',
+        controller: 'MembroCtrl',
+        controllerAs: 'vm'
       });
 
       $urlRouterProvider.otherwise('/login');

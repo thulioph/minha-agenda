@@ -2,7 +2,20 @@
   'use strict';
 
   function HorariosCtrl() {
-    console.log('HorariosCtrl');
+    var vm;
+
+    vm = this;
+    vm.form = {};
+
+    vm.novoAgendamento = novoAgendamento;
+
+    // ====
+
+    function novoAgendamento() {
+      console.log(vm.form);
+    }
+
+    // ====
   }
 
   angular
