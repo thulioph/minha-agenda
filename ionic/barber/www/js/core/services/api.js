@@ -45,7 +45,7 @@
         return $q.reject(error.status);
       }
 
-      return $http.get(ApiConfig.API_URL_PROD + '/api/users/create' + id).then(success).catch(error);
+      return $http.get(ApiConfig.API_URL_PROD + '/api/users/' + id).then(success).catch(error);
     }
 
     // =========
