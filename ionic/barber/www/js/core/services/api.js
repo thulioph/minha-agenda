@@ -33,11 +33,27 @@
       return $http.post(ApiConfig.API_URL_PROD + '/api/users/create', obj).then(success).catch(error);
     }
 
+    // Login
+    // =====
+    function _getUser(id) {
+      function success(response) {
+        return response.data;
+      }
+
+      function error(err) {
+        $log.error(err);
+        return $q.reject(error.status);
+      }
+
+      return $http.get(ApiConfig.API_URL_PROD + '/api/users/create' + id).then(success).catch(error);
+    }
+
     // =========
 
     return {
       getAllClients: _listAllClients,
-      signup: _addNewUser
+      signup: _addNewUser,
+      signin: _getUser
     }
   }
 
