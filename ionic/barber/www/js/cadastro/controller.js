@@ -2,7 +2,35 @@
   'use strict';
 
   function CadastroCtrl() {
-    console.log('CadastroCtrl');
+    var vm;
+
+    vm = this;
+
+    // ====
+
+    vm.cadastro = cadasto;
+
+    // ====
+
+    function cadasto(value) {
+      switch(value) {
+        case 'facebook':
+          _loginWithFacebook();
+        break;
+
+        case 'google':
+          _loginWithGoogle();
+        break;
+      }
+    }
+
+    function _loginWithFacebook() {
+      console.warn('Cadastro com Facebook');
+    }
+
+    function _loginWithGoogle() {
+      console.warn('Cadastro com Google');
+    }
   }
 
   angular

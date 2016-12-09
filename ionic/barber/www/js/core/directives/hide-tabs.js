@@ -6,9 +6,10 @@
       console.log('To aqui!');
 
       $rootScope.hideTabs = 'tabs-item-hide';
-      $scope.$on('$destroy', function() {
-          $rootScope.hideTabs = '';
-      });
+
+      // $scope.$on('$destroy', function() {
+      //     $rootScope.hideTabs = '';
+      // });
     }
 
     return {
