@@ -12,12 +12,12 @@
 
     // ====
 
-    vm.listClients = [];
+    vm.allClients = [];
 
     function getAllClients() {
       ApiService.getAllClients().then(function(result) {
-        console.warn(result);
-      })
+        vm.allClients = result;
+      });
     }
 
     // ====

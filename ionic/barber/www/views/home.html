@@ -4,18 +4,21 @@
   </ion-header-bar>
 
   <ion-content data-tap-disabled="true">
-    <div class="list card">
-
+    <div class="list card" ng-repeat="usr in vm.allClients track by $index">
       <div class="item item-avatar">
-        <img ng-src="{{user.picture}}">
-        <h2>{{user.name}}</h2>
-        <p>{{user.email}}</p>
+        <img ng-src="{{usr.picture}}">
+        <h2>{{usr.name}}</h2>
+        <p>{{usr.email}}</p>
       </div>
 
       <div class="item item-body">
-        <p>Membro desde: {{user.created_at | date: 'dd/MM/yyyy'}}.</p>
-      </div>
+        <p>Membro desde: {{usr.created_at | date: 'dd/MM/yyyy'}}.</p>
 
+        <span ng-switch="usr.social">
+          <i ng-switch-when="facebook" class="ion-social-facebook"></i>
+          <i ng-switch-when="google" class="ion-social-googleplus"></i>
+        </span>
+      </div>
     </div>
   </ion-content>
 </ion-view>
