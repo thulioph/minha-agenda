@@ -1,14 +1,15 @@
 (function() {
   'use strict';
 
-  function LoginCtrl($rootScope, $state, Facebook, Utils, ApiService) {
+  function LoginCtrl($rootScope, $state, Facebook, Google, Utils, ApiService) {
     var vm;
 
     vm = this;
 
     vm.login = {
       facebook: loginFacebook,
-      google: loginGoogle
+      google: loginGoogle,
+      signIn: signIn
     };
 
     // ====
@@ -24,7 +25,19 @@
 
       user_id = obj.user_info.id;
 
-      ApiService.signin(user_id).then(function(result) {
+      vm.login.signIn(user_id);
+    }
+
+    function SignupGoogle(evt, obj) {
+      var user_id;
+
+      user_id = obj.user_info.metadata.sources[0].id;
+
+      vm.login.signIn(user_id);
+    }
+
+    function signIn(id) {
+      ApiService.signin(id).then(function(result) {
         $rootScope.user = result;
         $state.go('home');
 
@@ -33,18 +46,22 @@
     }
 
     function loginGoogle() {
-      console.warn('Google');
+      Utils.progressbar.start();
+
+      Google.login();
     }
 
     // ====
 
     $rootScope.$on('fb_ok', SignupFacebook);
+    $rootScope.$on('gl_ok', SignupGoogle);
   }
 
   LoginCtrl.$inject = [
     '$rootScope',
     '$state',
     'Facebook',
+    'Google',
     'Utils',
     'ApiService'
   ];

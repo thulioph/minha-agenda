@@ -52,6 +52,6 @@
   ];
 
   angular
-  .module('Core.glLogin', [])
+  .module('Core.service')
   .service('Google', Google);
 })();
