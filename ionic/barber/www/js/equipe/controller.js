@@ -13,8 +13,12 @@
     // ====
 
     function getTeam() {
+      Utils.progressbar.start();
+
       Utils.team().then(function(result) {
         vm.team = result;
+
+        Utils.progressbar.complete();
       });
     }
 
