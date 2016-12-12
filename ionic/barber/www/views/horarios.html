@@ -8,10 +8,54 @@
       <div class="col">
         <form class="list" ng-submit="vm.novoAgendamento()">
           <aside>
-            <h5>Horário</h5>
+            <h5>Dia</h5>
 
             <div class="item ">
-              <input type="tel" placeholder="00:00" ng-model="vm.form.hour">
+              <input type="date" ng-model="vm.form.date">
+            </div>
+          </aside>
+
+          <aside>
+            <h5>Horário</h5>
+
+            <div class="item item-input item-select">
+              <h6 class="input-label">Hora</h6>
+
+              <select ng-model="vm.form.hour">
+                <option value="08">08</option>
+                <option value="09">09</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+              </select>
+            </div>
+
+            <div class="item item-input item-select">
+              <h6 class="input-label">Minuto</h6>
+
+              <select ng-model="vm.form.minute">
+                <option value="08">08</option>
+                <option value="09">09</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+              </select>
             </div>
           </aside>
 
