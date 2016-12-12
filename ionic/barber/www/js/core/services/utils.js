@@ -40,6 +40,15 @@
       return $http.get(url).then(success).catch(error);
     }
 
+
+    //
+    // Logout
+    //
+
+    function _logoutUser() {
+      delete $rootScope.user;
+    }
+
     // ====
 
     return {
@@ -48,7 +57,8 @@
         start: _progressBarStart,
         complete: _progressBarComplete
       },
-      team: _getTeam
+      team: _getTeam,
+      logout: _logoutUser
     }
   }
 

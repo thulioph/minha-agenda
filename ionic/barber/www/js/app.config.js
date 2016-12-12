@@ -39,6 +39,12 @@
         controller: 'BarbeariaCtrl',
         controllerAs: 'vm'
       })
+      .state('conta', {
+        url: '/conta',
+        templateUrl: 'views/conta.html',
+        controller: 'ContaCtrl',
+        controllerAs: 'vm'
+      })
       .state('equipe', {
         url: '/equipe',
         templateUrl: 'views/a-equipe.html',
