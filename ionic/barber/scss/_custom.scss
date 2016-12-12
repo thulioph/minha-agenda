@@ -71,3 +71,15 @@ body {
 .bg-cadastro {
   background-color: #000000;
 }
+
+//
+// Nav
+//
+
+.tab-item {
+  &.tab-item-active {
+    color: #FFD454 !important;
+    border: 0 solid #FFD454 !important;
+    background: #444 !important;
+  }
+}

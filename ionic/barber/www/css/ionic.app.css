@@ -9854,6 +9854,11 @@ body {
 .bg-cadastro {
   background-color: #000000; }
 
+.tab-item.tab-item-active {
+  color: #FFD454 !important;
+  border: 0 solid #FFD454 !important;
+  background: #444 !important; }
+
 /* Styling for the ngProgress itself */
 #ngProgress {
   margin: 0;
