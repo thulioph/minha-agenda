@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  function ModuleConfig($stateProvider, $urlRouterProvider) {
+  function ModuleConfig($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
     $stateProvider
       .state('splash', {
         url: '/',
@@ -59,6 +59,8 @@
       });
 
       $urlRouterProvider.otherwise('/');
+
+    $ionicConfigProvider.scrolling.jsScrolling(true);
   }
 
   angular
