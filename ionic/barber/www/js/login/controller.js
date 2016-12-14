@@ -23,7 +23,7 @@
     function SignupFacebook(evt, obj) {
       var user_id;
 
-      user_id = obj.user_info.id;
+      user_id = obj.user_info.data.id;
 
       vm.login.signIn(user_id);
     }

@@ -6,6 +6,9 @@
 angular.module('starter',
   [
     'ionic',
+    'ngProgress',
+    'ngCordova',
+    'ngCordovaOauth',
     'Barber.splash',
     'Barber.login',
     'Barber.cadastro',
@@ -15,8 +18,7 @@ angular.module('starter',
     'Barber.membro',
     'Barber.barbearia',
     'Barber.conta',
-    'Core',
-    'ngProgress'
+    'Core'
   ]
 )
 
