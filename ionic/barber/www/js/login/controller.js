@@ -23,7 +23,11 @@
     function SignupFacebook(evt, obj) {
       var user_id;
 
-      user_id = obj.user_info.data.id;
+      if (obj.user_info.data) {
+        user_id = obj.user_info.data.id; // via app
+      } else {
+        user_id = obj.user_info.id; // via web
+      }
 
       vm.login.signIn(user_id);
     }
@@ -38,8 +42,14 @@
 
     function signIn(id) {
       ApiService.signin(id).then(function(result) {
-        $rootScope.user = result;
-        $state.go('home');
+        if (result !== null) {
+          $rootScope.user = result;
+          $state.go('home');
+        } else {
+          vm.error = {
+            message: 'Não existe usuário para esta conta.'
+          };
+        }
 
         Utils.progressbar.complete();
       });

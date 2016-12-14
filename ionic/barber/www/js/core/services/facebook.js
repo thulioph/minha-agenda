@@ -13,6 +13,31 @@
        _checkLoginState();
     }
 
+    function _signup() {
+      var fields;
+
+      fields = ['public_profile', 'email'];
+
+      $cordovaOauth.facebook(ApiConfig.FACEBOOK.APP_ID, fields).then(function(result) {
+        $http.get("https://graph.facebook.com/v2.2/me", {
+            params: {
+              access_token: result.access_token,
+              fields: "name, picture, link, gender, location, email",
+              format: "json"
+            }
+          }).then(function(result) {
+          $rootScope.$broadcast('signup_ok', {
+            user_info: result
+          });
+        }, function(error) {
+          alert("Error: " + error);
+        });
+
+      }, function(err) {
+        console.error(err);
+      })
+    }
+
     function _login() {
       var fields;
 
@@ -90,7 +115,8 @@
     // ======
 
     return {
-      login: _login
+      login: _login,
+      signup: _signup
     }
   }
 

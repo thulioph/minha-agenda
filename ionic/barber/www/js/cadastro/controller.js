@@ -18,7 +18,7 @@
     function _signupWithFacebook() {
       Utils.progressbar.start();
 
-      Facebook.login();
+      Facebook.signup();
     }
 
     function _signupWithGoogle() {
@@ -29,11 +29,11 @@
       var user_obj;
 
       user_obj = {
-        name: obj.user_info.name,
-        email: obj.user_info.email,
-        gender: obj.user_info.gender,
-        social_id: obj.user_info.id,
-        picture: obj.user_info.picture.data.url,
+        name: obj.user_info.data.name,
+        email: obj.user_info.data.email,
+        gender: obj.user_info.data.gender,
+        social_id: obj.user_info.data.id,
+        picture: obj.user_info.data.picture.data.url,
         social: 'facebook'
       };
 
@@ -47,7 +47,7 @@
 
     // ====
 
-    $rootScope.$on('fb_ok', SignupFacebook);
+    $rootScope.$on('signup_ok', SignupFacebook);
   }
 
   CadastroCtrl.$inject = [
