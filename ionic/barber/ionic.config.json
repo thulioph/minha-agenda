@@ -1,6 +1,6 @@
 {
   "name": "barber",
-  "app_id": "d8c7ca08",
+  "app_id": "69a6d1d2",
   "gulpStartupTasks": [
     "sass",
     "watch"
