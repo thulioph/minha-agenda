@@ -1,8 +1,8 @@
 (function() {
   'use strict';
 
-  function Facebook($rootScope, ApiConfig) {
-    function _login() {
+  function Facebook($rootScope, ApiConfig, $cordovaOauth, $http) {
+    function _loginWeb() {
       FB.init({
         appId: ApiConfig.FACEBOOK.APP_ID,
         cookie: true,
@@ -11,6 +11,56 @@
       });
 
        _checkLoginState();
+    }
+
+    function _signup() {
+      var fields;
+
+      fields = ['public_profile', 'email'];
+
+      $cordovaOauth.facebook(ApiConfig.FACEBOOK.APP_ID, fields).then(function(result) {
+        $http.get("https://graph.facebook.com/v2.2/me", {
+            params: {
+              access_token: result.access_token,
+              fields: "name, picture, link, gender, location, email",
+              format: "json"
+            }
+          }).then(function(result) {
+          $rootScope.$broadcast('signup_ok', {
+            user_info: result
+          });
+        }, function(error) {
+          alert("Error: " + error);
+        });
+
+      }, function(err) {
+        console.error(err);
+      })
+    }
+
+    function _login() {
+      var fields;
+
+      fields = ['public_profile', 'email'];
+
+      $cordovaOauth.facebook(ApiConfig.FACEBOOK.APP_ID, fields).then(function(result) {
+        $http.get("https://graph.facebook.com/v2.2/me", {
+            params: {
+              access_token: result.access_token,
+              fields: "name, picture, link, gender, location, email",
+              format: "json"
+            }
+          }).then(function(result) {
+          $rootScope.$broadcast('fb_ok', {
+            user_info: result
+          });
+        }, function(error) {
+          alert("Error: " + error);
+        });
+
+      }, function(err) {
+        console.error(err);
+      })
     }
 
     function _statusChangeCallback(response) {
@@ -65,13 +115,16 @@
     // ======
 
     return {
-      login: _login
+      login: _login,
+      signup: _signup
     }
   }
 
 Facebook.$inject = [
     '$rootScope',
-    'ApiConfig'
+    'ApiConfig',
+    '$cordovaOauth',
+    '$http'
   ];
 
   angular
