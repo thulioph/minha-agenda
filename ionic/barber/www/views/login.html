@@ -1,0 +1,35 @@
+<ion-view view-title="Barbearia 081 - Login" hide-tabs>
+  <ion-content data-tap-disabled="true" class="bg-login">
+    <div class="row logo-container">
+      <div class="col col-50 col-offset-25">
+        <figure>
+          <img src="img/logo.png" alt="">
+        </figure>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <button class="button button-full button-stable"
+          ng-click="vm.login.facebook()">
+          Entrar com Facebook
+        </button>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <button class="button button-full button-stable"
+          ng-click="vm.login.google()">
+          Entrar com Google
+        </button>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <p class="assertive">{{vm.error.message}}</p>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

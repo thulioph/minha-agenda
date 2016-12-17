@@ -1,0 +1,13 @@
+{
+  "name": "barber",
+  "app_id": "69a6d1d2",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*",
+    "!www/**/*.map"
+  ]
+}

@@ -1,0 +1,15 @@
+<ion-view view-title="Barbearia 081 - A Equipe">
+  <ion-header-bar align-title="center" class="bar-dark">
+    <h1 class="title">A Equipe</h1>
+  </ion-header-bar>
+
+  <ion-content data-tap-disabled="true">
+    <div class="list card">
+      <a ng-href="#/equipe/{{user.id}}" class="item item-avatar barber-worker" ng-repeat="user in vm.team">
+        <img ng-src="{{user.image}}" alt="placeholder+image">
+        <h2>{{user.name}}</h2>
+        <p>{{user.role}}</p>
+      </a>
+    </div>
+  </ion-content>
+</ion-view>

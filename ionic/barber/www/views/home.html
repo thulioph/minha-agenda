@@ -1,0 +1,26 @@
+<ion-view view-title="Barbearia 081 - Home">
+  <ion-header-bar align-title="center" class="bar-dark">
+    <h1 class="title">Home</h1>
+  </ion-header-bar>
+
+  <ion-content data-tap-disabled="true">
+    <div class="list card"
+      ng-repeat="item in vm.lastServices track by $index">
+      <div class="item item-avatar">
+        <img ng-src="{{item.picture}}">
+
+        <h2>{{item.name}}</h2>
+        <p>{{item.email}}</p>
+      </div>
+
+      <div class="item item-body">
+        <p>Membro desde: {{item.created_at | date: 'dd/MM/yyyy'}}.</p>
+
+        <span ng-switch="item.social">
+          <i ng-switch-when="facebook" class="ion-social-facebook"></i>
+          <i ng-switch-when="google" class="ion-social-googleplus"></i>
+        </span>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

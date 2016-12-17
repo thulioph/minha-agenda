@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+    <meta name="google-signin-client_id" content="490787298478-l9t0v16t4es8h8hnset7h18nab6l1gju.apps.googleusercontent.com">
+
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://www.googleapis.com https://graph.facebook.com">
+
+    <title>Barbearia 081</title>
+
+    <link rel="manifest" href="manifest.json">
+
+    <!-- un-comment this code to enable service worker
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.log('service worker installed'))
+          .catch(err => console.log('Error', err));
+      }
+    </script>-->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+
+    <!-- compiled css output -->
+    <link href="css/ionic.app.css" rel="stylesheet">
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/app.config.js"></script>
+    <script src="js/app.constant.js"></script>
+
+    <!-- Core -->
+    <script src="js/core/module.js"></script>
+    <script src="js/core/services/api.js"></script>
+    <script src="js/core/services/utils.js"></script>
+    <script src="js/core/services/facebook.js"></script>
+    <script src="js/core/services/google.js"></script>
+    <script src="js/core/directives/hide-tabs.js"></script>
+
+    <!-- Splash -->
+    <script src="js/splash/module.js"></script>
+    <script src="js/splash/controller.js"></script>
+
+    <!-- Login -->
+    <script src="js/login/module.js"></script>
+    <script src="js/login/controller.js"></script>
+
+    <!-- Cadastro -->
+    <script src="js/cadastro/module.js"></script>
+    <script src="js/cadastro/controller.js"></script>
+
+    <!-- Home -->
+    <script src="js/home/module.js"></script>
+    <script src="js/home/controller.js"></script>
+
+    <!-- Horários -->
+    <script src="js/horarios/module.js"></script>
+    <script src="js/horarios/controller.js"></script>
+
+    <!-- Barbearia -->
+    <script src="js/barbearia/module.js"></script>
+    <script src="js/barbearia/controller.js"></script>
+
+    <!-- Equipe -->
+    <script src="js/equipe/module.js"></script>
+    <script src="js/equipe/controller.js"></script>
+
+    <!-- Membro -->
+    <script src="js/membro/module.js"></script>
+    <script src="js/membro/controller.js"></script>
+
+    <!-- Conta -->
+    <script src="js/conta/module.js"></script>
+    <script src="js/conta/controller.js"></script>
+  </head>
+  <body ng-app="starter">
+    <ion-nav-view></ion-nav-view>
+
+    <div ng-include="" src="'views/templates/tabs.tmpl.html'" views="">
+    </div>
+
+    <!-- Google Maps -->
+    <script src="https://maps.googleapis.com/maps/api/js">
+    </script>
+
+    <!-- Facebook -->
+    <script async defer>
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <!-- Google -->
+    <script src="https://apis.google.com/js/platform.js" async defer>
+    </script>
+
+    <!-- NgProgress -->
+    <script src="lib/ngprogress.js"></script>
+
+    <!-- ngCordova -->
+    <script src="lib/ngCordova/dist/ng-cordova.min.js"></script>
+    <script src="lib/ng-cordova-oauth/dist/ng-cordova-oauth.min.js"></script>
+  </body>
+</html>

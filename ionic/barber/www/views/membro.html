@@ -1,0 +1,34 @@
+<ion-view view-title="Barbearia 081 - A Equipe">
+  <ion-header-bar align-title="center" class="bar-dark">
+    <a class="button icon-left ion-chevron-left button-clear" ng-click="vm.goBack()">
+      voltar
+    </a>
+
+    <h1 class="title">{{teamMember.name}}</h1>
+  </ion-header-bar>
+
+  <ion-content data-tap-disabled="true">
+    <div class="list card">
+      <div class="item item-avatar">
+        <img ng-src="{{teamMember.image}}" alt="placeholder+image">
+        <h2>{{teamMember.name}}</h2>
+        <p>{{teamMember.role}}</p>
+      </div>
+
+      <div class="item item-body">
+        <img class="full-image" src="http://dummyimage.com/540x304/4d494d/686a82.gif&text=placeholder+image">
+
+
+        <p>
+          {{teamMember.description}}
+        </p>
+
+        <p>
+          <a href="#" class="subdued">#undercut</a>
+          <a href="#" class="subdued">#degradê</a>
+          <a href="#" class="subdued">#pompadour</a>
+        </p>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
