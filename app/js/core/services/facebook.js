@@ -45,6 +45,8 @@
       fields = 'name, picture, link, gender, locale, email, cover, timezone, updated_time';
 
       FB.api('/me', { fields: fields }, function(response) {
+        console.warn('Aqui vem o resultado -> ', response);
+
         $rootScope.$broadcast('fb_ok', {
           user_info: response
         });

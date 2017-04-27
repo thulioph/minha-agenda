@@ -37,6 +37,8 @@
         picture: obj.user_info.picture.data.url
       };
 
+      console.warn('Logado..', user_obj);
+
       Auth.Facebook(user_obj);
     }
 
